@@ -30,7 +30,7 @@ const NeedHelp: React.FC = () => {
       if (response.status === 200) {
         setResponseMessage('Your request has been submitted successfully!')
       }
-    } catch (error) {
+    } catch  {
       setResponseMessage('Something went wrong. Please try again.')
     } finally {
       setLoading(false)

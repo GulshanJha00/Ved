@@ -29,7 +29,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({
       </div>
       <h2 className={styles.name}>{name}</h2>
       <p className={styles.title}>{title}</p>
-      <p className={styles.quote}>"{quote}"</p>
+      <p className={styles.quote}>&quot;{quote}&quot;</p> 
       
       <div className={styles.socialMedia}>
         <Link href={instagramLink} target="_blank" rel="noopener noreferrer">
