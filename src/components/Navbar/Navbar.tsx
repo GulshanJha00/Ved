@@ -1,32 +1,36 @@
-import React from 'react'
+'use client';
+import { useState } from 'react';
+import Link from 'next/link';
+import styles from './Navbar.module.css';
+import Image from 'next/image';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <div>
-      <header>
-  <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-    <ul className="navigation max-w-[90vw] flex flex-wrap justify-between items-center relative mx-auto py-8">
-      <a className="logo" href="#">
-        <h3 className="font-bold text-2xl">LOGO</h3>
-      </a>
-      <input type="checkbox" id="check" />
+    <nav className={styles.navbar}>
+      <div className={styles.logo}>
+      <Image src="/VED.png" alt='ved'
+          width={60} height={60} className="inline-block ml-2" />
+      </div>
+      <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="/about">Get Notes</Link></li>
+        <li><Link href="/about">About Us</Link></li>
+        <li><Link href="/help">Need Help?</Link></li>
+      </ul>
+      <div 
+        className={`${styles.hamburger} ${isMenuOpen ? styles.hamburgerOpen : ''}`} 
+        onClick={toggleMenu}
+      >
+        <span className={styles.bar}></span>
+        <span className={styles.bar}></span>
+        <span className={styles.bar}></span>
+      </div>
+    </nav>
+  );
+};
 
-      <span className="menu flex [&>li]:pl-8 [&>li>a]:text-center [&>li>a]:relative [&>li>a]:transition [&>li>a]:duration-200 [&>li>a]:ease-in-out [&>li>a]:font-medium [&>li>a]:text-lg">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Contact</a></li>
-
-        <label className="close-menu">X</label>
-      </span>
-
-      <label className="open-menu">Menu</label>
-    </ul>
-  </nav>
-</header>
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;
