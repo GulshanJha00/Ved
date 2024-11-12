@@ -1,0 +1,19 @@
+{
+    "first": {
+      "odd": ["CAED", "Chemistry", "Electrical", "Mathematics", "Mechanical", "Python"],
+      "even": ["C-programming","Cyber Security","Electronics", "Mathematics-II","Physics"]
+    },
+    "second": {
+      "odd": ["DDCO", "DSA", "Mathematics-III", "Operating System", "OOP java"],
+      "even": ["ADA", "Advanced Java", "Graph Theory", "DBMS", "Biology"]
+    },
+    "third": {
+      "odd": ["SEPM", "Cloud Computing", "Electives", "Theory Of Computation", "Computer Networks"],
+      "even": ["ADA", "Advanced Java", "Graph Theory", "DBMS", "Biology"]
+    },
+    "fourth": {
+      "odd": ["DDCO", "DSA", "Mathematics-III", "Operating System", "OOP java"],
+      "even": ["ADA", "Advanced Java", "Graph Theory", "DBMS", "Biology"]
+    }
+  }
+  
