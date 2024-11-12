@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import Navbar from '@/components/Navbar/Navbar'
-import Homepage from '@/components/Homepage/Homepage'
+import Navbar from '../components/Navbar/Navbar'
+import Homepage from '../components/Homepage/Homepage'
 
 const Page: React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import axios from 'axios'
-import Navbar from '@/components/Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 
 const NeedHelp: React.FC = () => {
   const [formData, setFormData] = useState({
