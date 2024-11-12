@@ -19,7 +19,7 @@ const Homepage = () => {
         </p>
 
         {/* Button with enhanced styles */}
-        <Link href="/abc" className="bg-gradient-to-r from-[#6a4c39] to-[#8b6b4b] text-white py-3 px-8 rounded-md text-xl font-semibold 
+        <Link href="/notes" className="bg-gradient-to-r from-[#6a4c39] to-[#8b6b4b] text-white py-3 px-8 rounded-md text-xl font-semibold 
                                   hover:from-[#8b6b4b] hover:to-[#6a4c39] transition duration-300 ease-in-out 
                                   transform hover:scale-105 hover:shadow-lg shadow-xl focus:outline-none focus:ring-4 focus:ring-[#6a4c39]">
           Get Notes

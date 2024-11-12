@@ -17,7 +17,7 @@ const Navbar = () => {
       </div>
       <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
         <li><Link href="/">Home</Link></li>
-        <li><Link href="/about">Get Notes</Link></li>
+        <li><Link href="/notes">Get Notes</Link></li>
         <li><Link href="/about">About Us</Link></li>
         <li><Link href="/help">Need Help?</Link></li>
       </ul>

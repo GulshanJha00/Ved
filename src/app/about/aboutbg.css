@@ -1,0 +1,38 @@
+/* aboutbg.css */
+
+.aboutbg {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 50% 50%, #1f0b6d, #120349, #06020f);
+  animation: gradientAnimation 10s ease-in-out infinite; /* Smooth transition with moderate speed */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background: radial-gradient(circle at 50% 50%, #1f0b6d, #120349, #06020f);
+  }
+  
+  20% {
+    background: radial-gradient(circle at 50% 50%, #1d0b6f, #130449, #07020c);
+  }
+  
+  40% {
+    background: radial-gradient(circle at 50% 50%, #180a6b, #140351, #06010f);
+  }
+
+  60% {
+    background: radial-gradient(circle at 50% 50%, #160d6f, #130441, #06000f);
+  }
+
+  80% {
+    background: radial-gradient(circle at 50% 50%, #120349, #06020f, #1f0b6d);
+  }
+
+  100% {
+    background: radial-gradient(circle at 50% 50%, #1f0b6d, #120349, #06020f);
+  }
+}
