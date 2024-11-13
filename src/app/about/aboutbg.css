@@ -2,13 +2,23 @@
 
 .aboutbg {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh; /* Allows the div to expand if content overflows */
   display: flex; 
   justify-content: center;
-   align-items: center;
+  align-items: center;
   background: radial-gradient(circle at 50% 50%, #1f0b6d, #120349, #06020f);
-  animation: gradientAnimation 10s ease-in-out infinite; /* Smooth transition with moderate speed */
+  animation: gradientAnimation 10s ease-in-out infinite;
+  overflow-y: auto; /* Enables scrolling if content overflows */
+  padding: 2rem; /* Default padding */
+}
+
+/* Add a top margin for screens smaller than 768px */
+@media (max-width: 768px) {
+  .aboutbg {
+    padding-top: 10rem; /* Adds space at the top on smaller screens */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @keyframes gradientAnimation {
