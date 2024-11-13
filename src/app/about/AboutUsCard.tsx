@@ -53,7 +53,7 @@ const About: React.FC = () => {
         name="Gulshan Kumar"
         title="President"
         quote="In life and code, the only limit is your creativity."
-        imageUrl="/president.jpeg" // Correct image path
+        imageUrl="/president1.jpeg" // Correct image path
         instagramLink="https://www.instagram.com/jhagk_/"
         linkedinLink="https://www.linkedin.com/in/gulshankumar0/"
         githubLink="https://github.com/GulshanJha00"
