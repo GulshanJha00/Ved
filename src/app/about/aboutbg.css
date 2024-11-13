@@ -4,9 +4,9 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  display: flex;
+  display: flex; 
   justify-content: center;
-  align-items: center;
+   align-items: center;
   background: radial-gradient(circle at 50% 50%, #1f0b6d, #120349, #06020f);
   animation: gradientAnimation 10s ease-in-out infinite; /* Smooth transition with moderate speed */
 }
