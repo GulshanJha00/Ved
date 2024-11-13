@@ -7,14 +7,14 @@ const Homepage = () => {
   return (
     <div className="hero text-center flex justify-center items-center flex-col h-full">
         {/* h1 with gradient text, blurred background, and text shadows */}
-        <h1 className="md:text-6xl sm:text-5xl text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#2a3d6b] via-[#e5b161] to-[#f7d079] 
+        <h1 className="md:text-6xl sm:text-5xl text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ffd11b] via-[#00d5ff] to-[#ff0101] 
                       relative z-10 p-4 
                       text-shadow-xl
                       after:absolute after:top-0 after:left-0 after:right-0 after:bottom-0 after:bg-red-500/30 after:blur-sm after:z-[-1]">
           Welcome to VED
         </h1>
         
-        <p className="md:text-lg text-base mb-8 text-[#45240d] font-serif text-shadow-md">
+        <p className="md:text-lg text-base mb-8 text-[#5bff1f] font-serif text-shadow-md">
           Your go-to platform for free study materials
         </p>
 

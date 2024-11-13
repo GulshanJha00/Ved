@@ -1,12 +1,11 @@
 'use client'
-
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Homepage from '../components/Homepage/Homepage'
 
 const Page: React.FC = () => {
   return (
-    <div className='w-full h-screen bg-gradient-to-r from-[#f4f1e1] via-[#d8c9a3] to-[#bfa77e] animate-gradient'>
+    <div className='w-full h-screen bg-gradient-to-r from-[#5a5f6f] via-[#294264] to-[#3e5777] animate-gradient'>
       <Navbar />
       <Homepage/>
     </div>

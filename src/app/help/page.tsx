@@ -38,7 +38,7 @@ const NeedHelp: React.FC = () => {
   }
 
   return (
-    <div className='w-full h-screen bg-gradient-to-r from-[#f4f1e1] via-[#d8c9a3] to-[#bfa77e] animate-gradient'>
+    <div className='w-full h-screen bg-gradient-to-r from-[#5a5f6f] via-[#294264] to-[#3e5777] animate-gradient'>
       <Navbar />
       <div className="w-full h-screen flex justify-center items-center">
         <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-md">

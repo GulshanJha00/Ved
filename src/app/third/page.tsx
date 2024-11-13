@@ -7,7 +7,7 @@ const page = () => {
     <div>
       <div>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-r from-[#f4f1e1] via-[#d8c9a3] to-[#bfa77e] animate-gradient flex justify-center items-center flex-wrap gap-6 py-8 ">
+      <div className="min-h-screen bg-gradient-to-r from-[#5a5f6f] via-[#294264] to-[#3e5777] animate-gradient flex justify-center items-center flex-wrap gap-6 py-8 ">
         <Button text="DDCO" href="https://drive.google.com/drive/folders/1-ZnDLbbIIpkvtjYU6cpdMyriqjkGaqt6?usp=sharing" />
 
         <Button text="DSA" href="https://drive.google.com/drive/folders/1EdtJiy0SjhLjAPj_5uOcd1pG2dKXEBzZ?usp=sharing" />
