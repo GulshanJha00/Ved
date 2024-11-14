@@ -11,7 +11,7 @@ const page = () => {
         <Button text="CAED" href="https://drive.google.com/drive/folders/1w-x2dPdnbZDIJxmU3wtaZAL8zb3H1utq?usp=sharing" />
 
         <Button text="Chemistry" href="https://drive.google.com/drive/folders/12ryTRVMEkI1xkwh5CMsKkI4JI_4hI6r7?usp=sharing" />
-        <Button text="Electrical" href="/" />
+        <Button text="Electrical" href="https://drive.google.com/drive/folders/1HYnGQgROWK7pQINSP0TbeD61nvc3Cege?usp=sharing" />
 
         <Button text="Mathematics" href="https://drive.google.com/drive/folders/1hOSKP7WVqGwnsk4yARCBmt81WS2NnjMK?usp=sharing" />
         <Button text="Mechanical" href="https://drive.google.com/drive/folders/1QgC1PZcyLGhjGK8fOByv2twD0r9CmTds?usp=sharing" />
