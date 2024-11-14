@@ -10,7 +10,7 @@ const Homepage = () => {
         <h1 className="md:text-6xl sm:text-5xl text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ffd11b] via-[#00d5ff] to-[#ff0101] 
                       relative z-10 p-4 
                       text-shadow-xl
-                      after:absolute after:top-0 after:left-0 after:right-0 after:bottom-0 after:bg-red-500/30 after:blur-sm after:z-[-1]">
+                       after:top-0 after:left-0 after:right-0 after:bottom-0 after:bg-red-500/30 after:blur-sm after:z-[-1]">
           Welcome to VED
         </h1>
         
