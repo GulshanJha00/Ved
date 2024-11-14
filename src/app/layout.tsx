@@ -29,7 +29,7 @@ export default function RootLayout({
         {/* Google Analytics */}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-W42NPGFX9E`}
+          src="https://www.googletagmanager.com/gtag/js?id=G-W42NPGFX9E"
         />
         <script
           dangerouslySetInnerHTML={{
@@ -45,7 +45,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
         {children}
       </body>
     </html>
