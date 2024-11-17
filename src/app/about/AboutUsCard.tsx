@@ -60,7 +60,7 @@ const About: React.FC = () => {
         githubLink="https://github.com/GulshanJha00"
       />
       <AboutUsCard
-        name="Dipanshu Shaw"
+        name="Dipanshu Shaw "
         title="Vice President"
         quote="Code is like humor, when you have to explain it, it's bad."
         imageUrl="/vicepresident.jpeg" // Correct image path
