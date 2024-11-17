@@ -8,7 +8,7 @@ const Loading = () => {
       
       {/* Loading Message */}
       <h1 className="lg:text-4xl sm:text-lg md:text-2xl text-lg font-extrabold font-mono text-green-500 text-center">
-        Busy loading!! Good thing takes time to load ⏳
+        Please Wait!! Good thing takes time to load ⏳
       </h1>
       
       
