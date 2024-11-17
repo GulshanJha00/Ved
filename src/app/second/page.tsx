@@ -7,7 +7,7 @@ const page = () => {
     <div>
       <div>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-r from-[#5a5f6f] via-[#294264] to-[#3e5777] animate-gradient  flex flex-row items-center justify-evenly flex-wrap max-lg:pt-24">
+      <div className="min-h-screen bg-gradient-to-r from-[#5a5f6f] via-[#294264] to-[#3e5777] animate-gradient  flex flex-row items-center justify-evenly flex-wrap max-xl:pt-32">
         
         <Button text="C-programming" href="https://drive.google.com/drive/folders/1He2zY8SmkSOtzGrQ_Wm5ZDxMs7MygS5p?usp=sharing" />
 

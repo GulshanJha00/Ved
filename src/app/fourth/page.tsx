@@ -7,7 +7,7 @@ const page = () => {
     <div>
       <div>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-r from-[#5a5f6f] via-[#294264] to-[#3e5777] animate-gradient  flex flex-row items-center justify-evenly flex-wrap max-lg:pt-24">
+      <div className="min-h-screen bg-gradient-to-r from-[#5a5f6f] via-[#294264] to-[#3e5777] animate-gradient  flex flex-row items-center justify-evenly flex-wrap max-xl:pt-32">
         <Button text="ADA" href="https://drive.google.com/drive/folders/1OiUocPtnIExDd8h0cQ19gABdWlEO9R1e?usp=sharing" />
 
         <Button text="Advanced Java" href="https://drive.google.com/drive/folders/1IjkvmIyfzHYwyNW2kZs-mjWLjyMvk_VR?usp=sharing" />
