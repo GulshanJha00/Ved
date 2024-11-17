@@ -13,9 +13,6 @@ const Page = () => {
         <Button text="3rd Semester" href="/third" />
         <Button text="4th Semester" href="/fourth" />
         <Button text="5th Semester" href="/fifth" />
-        {/* <Button text="6th Semester" href="/sixth" />
-        <Button text="7th Semester" href="/seventh" />
-        <Button text="8th Semester" href="/eighth" /> */}
       </div>
     </div>
   );
