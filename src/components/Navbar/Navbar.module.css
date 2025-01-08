@@ -1,20 +1,21 @@
 /* ElegantNavbar.module.css */
 .navbar {
-  background-color: #1c2b34;
-  background-image: url('https://www.transparenttextures.com/patterns/soft-shadow.png');
-  padding: 20px 60px;
+  padding: 5px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: 'Cinzel', serif;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  border: 1px solid #d1c4b7;
-  position: absolute;
+  position: sticky;
+  top: 0px;
   width: 100%;
-  z-index: 11;
-
+  z-index: 50;
+  background-color: rgba(164, 147, 245, 0.363); /* Transparent background */
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  transition: background-color 0.3s ease; /* Smooth background changes */
 }
+
 
 .navbar .logo a {
   color: #d3af80;
@@ -31,10 +32,10 @@
 }
 
 .menu li a {
-  color: #d3af80;
+  color: black;
   text-decoration: none;
   font-size: 18px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.3s ease;
@@ -85,7 +86,7 @@
 /* Mobile Menu and Navbar Adjustments */
 @media (max-width: 768px) {
   .navbar {
-    padding: 20px 15px;
+    padding: 5px 15px;
   }
 
   .menu {
@@ -94,10 +95,13 @@
     align-items: center;
     position: absolute;
     z-index: 10;
-    top: 60px;
+    top: 90px;
+    padding: 20px;
     left: 0;
     right: 0;
-    background-color: #1c2b34;
+    background-color: rgba(164, 147, 245, 0.963); /* Transparent background */
+  backdrop-filter: blur(50px); 
+  -webkit-backdrop-filter: blur(50px); 
     display: none;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow to make the menu stand out */

@@ -14,8 +14,8 @@ const Navbar = () => {
       <div className={styles.logo}>
         <Link href={"/"}>
         
-      <Image src="/VED.png" alt='ved'
-          width={60} height={60} className="inline-block ml-2" />
+      <Image src="/VEDnoBg.png" alt='ved'
+          width={80} height={80} className="inline-block ml-2" />
         </Link>
       </div>
       <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>

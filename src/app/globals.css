@@ -25,14 +25,3 @@ html, body {
   font-family: 'Merriweather', serif;
 }
 
-/* Gradient Animation */
-@keyframes gradient {
-  0% { background-position: 300% 0%; }
-  50% { background-position: 0% 100%; }
-  100% { background-position: 300% 0%; }
-}
-
-.animate-gradient {
-  background-size: 300% 300%;
-  animation: gradient 12s ease-in-out infinite;
-}

@@ -1,31 +1,37 @@
-'use client'
-import React from 'react'
-import "./Homepage.css"
-import Link from 'next/link'
+"use client";
+import React from "react";
+import Link from "next/link";
+import Block from "../Block";
 
 const Homepage = () => {
   return (
-    <div className="hero text-center flex justify-center items-center flex-col h-full">
-        {/* h1 with gradient text, blurred background, and text shadows */}
-        <h1 className="md:text-6xl sm:text-5xl text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ffd11b] via-[#00d5ff] to-[#ff0101] 
-                      relative z-10 p-4 
-                      text-shadow-xl
-                       after:top-0 after:left-0 after:right-0 after:bottom-0 after:bg-red-500/30 after:blur-sm after:z-[-1]">
-          Welcome to VED
+    <>
+      <div className="lg:pt-40 pt-20 w-full flex flex-col items-center pb-36 bg-[#731dad]">
+        {/* Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-[#6bfbce] font-sans pl-8 sm:pl-16 lg:pl-32 mb-4 text-center">
+          Find all your study material{" "}
+          <div>free on {`<`}NIE VED{`/>`}</div>
         </h1>
-        
-        <p className="md:text-lg text-base mb-8 text-[#5bff1f] font-serif text-shadow-md">
-          Your go-to platform for free study materials
+
+        {/* Description */}
+        <p className="text-base sm:text-lg md:text-xl mb-8 pl-8 sm:pl-16 lg:pl-14 w-11/12 sm:w-3/4 lg:w-1/2 text-[#5bff1f] font-sans text-shadow-md text-center">
+          Looking for notes? We&apos;ve got everything you need. Simplifying learning, one click at a time!
         </p>
 
-        {/* Button with enhanced styles */}
-        <Link href="/notes" className="bg-gradient-to-r from-[#6a4c39] to-[#8b6b4b] text-white py-3 px-8 rounded-md text-xl font-semibold 
-                                  hover:from-[#8b6b4b] hover:to-[#6a4c39] transition duration-300 ease-in-out 
-                                  transform hover:scale-105 hover:shadow-lg shadow-xl focus:outline-none focus:ring-4 focus:ring-[#6a4c39]">
+        {/* Get Notes Link */}
+        <Link
+          href="/notes"
+          target="_blank"
+          className="bg-white text-blue-700 border-2 border-blue-700 py-3 px-8 rounded-md text-lg sm:text-xl font-semibold hover:bg-blue-700 hover:text-white hover:border-white transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg shadow-xl focus:outline-none focus:ring-4 focus:ring-[#6a4c39]"
+        >
           Get Notes
         </Link>
-      </div>
-  )
-}
 
-export default Homepage
+        {/* Block Component */}
+        <Block />
+      </div>
+    </>
+  );
+};
+
+export default Homepage;
