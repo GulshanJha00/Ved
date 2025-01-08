@@ -10,7 +10,6 @@ const Page = () => {
     <div>
       {/* Navbar Section */}
       <Navbar />
-<<<<<<< HEAD
       
       {/* Main Content */}
       <div className="min-h-screen bg-gradient-to-r from-purple-600 to-blue-600 animate-gradient flex flex-col justify-center items-center py-16 px-6 space-y-12">
@@ -60,14 +59,6 @@ const Page = () => {
 
         {/* FlexBoxAds Section */}
         <FlexBoxAds />
-=======
-      <div className="min-h-screen bg-gradient-to-r from-[#5a5f6f] via-[#294264] to-[#3e5777] animate-gradient flex flex-row items-center justify-evenly flex-wrap max-xl:pt-32">
-      <Button text="Cloud Computing" href="/" />
-        <Button text="Computer Networks" href="/" />
-        <Button text="Elective" href="/" />
-        <Button text="SEPM" href="/" />
-        <Button text="Theory Of Computation" href="/" />
->>>>>>> 22248c587155444ba981ffab25353db7e3389cb4
       </div>
     </div>
   );
