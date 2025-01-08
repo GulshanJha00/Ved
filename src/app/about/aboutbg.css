@@ -6,9 +6,7 @@
   display: flex; 
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at 50% 50%, #1f0b6d, #120349, #06020f);
-  animation: gradientAnimation 10s ease-in-out infinite;
-  overflow-y: auto; /* Enables scrolling if content overflows */
+  background-color: #731dad;
   padding: 2rem; /* Default padding */
 }
 

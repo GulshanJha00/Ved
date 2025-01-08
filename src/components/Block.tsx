@@ -43,7 +43,7 @@ const Block = () => {
   }, []);
 
   return (
-    <div id="countBlock" className='w-full h-auto grid grid-cols-2 lg:grid-cols-4 gap-6 px-6 md:px-36 absolute lg:bottom-32 bottom-64'>
+    <div id="countBlock" className='w-full h-auto grid grid-cols-2 lg:grid-cols-4 gap-6 px-6 md:px-36 absolute lg:top-[37rem] xl:top-[37rem]  top-64'>
       {/* Card 1 */}
       <div className='lg:h-24 h-20 w-36 lg:w-40 bg-white shadow-lg rounded-lg flex flex-col justify-center items-center'>
         <h1 className='text-[#731dad] text-3xl font-bold font-sans'>{eventCount.toLocaleString()}+</h1>
