@@ -16,6 +16,7 @@ const Homepage = () => {
         {/* Description */}
         <p className="text-base sm:text-lg md:text-xl mb-8 pl-8 sm:pl-16 lg:pl-14 w-11/12 sm:w-3/4 lg:w-1/2 text-[#5bff1f] font-sans text-shadow-md text-center">
           Looking for notes? We&apos;ve got everything you need. Simplifying learning, one click at a time!
+          
         </p>
 
         {/* Get Notes Link */}
