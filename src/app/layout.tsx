@@ -30,6 +30,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Analytics */}
+
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-5826477007107638"
+        ></meta>
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-W42NPGFX9E"
@@ -48,8 +53,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Suspense fallback={<Loading/>}>
-        
+        <Suspense fallback={<Loading />}>
           <Navbar />
 
           {children}
