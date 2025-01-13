@@ -29,6 +29,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5826477007107638"
+     crossOrigin="anonymous"></script>
+
+<ins className="adsbygoogle"
+     style={{display:"block"}}
+     data-ad-client="ca-pub-5826477007107638"
+     data-ad-slot="5156871218"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5826477007107638"
      crossOrigin="anonymous"></script>
         <meta
