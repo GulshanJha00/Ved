@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Button from "@/components/Button";
-import Navbar from "@/components/Navbar/Navbar";
 import FlexBoxAds from "@/components/flexbox/FlexBoxAds";
 import { FaCloud, FaNetworkWired, FaListAlt, FaProjectDiagram, FaBrain } from "react-icons/fa";
 
@@ -9,7 +8,6 @@ const Page = () => {
   return (
     <div>
       {/* Navbar Section */}
-      <Navbar />
       
       {/* Main Content */}
       <div className="min-h-screen bg-gradient-to-r from-purple-600 to-blue-600 animate-gradient flex flex-col justify-center items-center py-16 px-6 space-y-12">
