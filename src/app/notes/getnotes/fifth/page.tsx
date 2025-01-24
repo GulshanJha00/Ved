@@ -29,7 +29,7 @@ const Page = () => {
             text={<><FaCloud className="mr-3 text-2xl" />Cloud Computing</>} 
             href="/" 
           />
-          <Button 
+          <Button
          target="_blank"
 
             text={<><FaNetworkWired className="mr-3 text-2xl" />Computer Networks</>} 
