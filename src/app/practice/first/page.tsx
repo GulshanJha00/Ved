@@ -56,7 +56,8 @@ const Page = () => {
   return (
     <div className="flex h-screen">
       <div className="w-1/3 bg-purple-700 flex flex-col items-center justify-center text-white p-6">
-        <h1 className="text-4xl font-bold mb-4">VedPad</h1>
+        <h1 className="text-4xl font-bold mb-4">VedPad </h1>
+        <h1 className="text-2xl text-center">IN PROGRESS, COMPILER WONT WORK AS EXPECTED</h1>
         <p className="text-lg text-center">In Progress: Python Compiler (Beta)</p>
       </div>
 
