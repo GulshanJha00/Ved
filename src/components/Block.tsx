@@ -25,10 +25,10 @@ const Block = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          countUp(setEventCount, 50000, 2000);
-          countUp(setPageViews, 25000, 2000);
-          countUp(setActiveUsers, 1700, 2000);
-          countUp(setNotesRequest, 50, 2000);
+          countUp(setEventCount, 100000, 2000);
+          countUp(setPageViews, 50000, 1700);
+          countUp(setActiveUsers, 2500, 1500);
+          countUp(setNotesRequest, 50, 1000);
         }
       },
       { threshold: 0.5 } // trigger when 50% of the element is visible
