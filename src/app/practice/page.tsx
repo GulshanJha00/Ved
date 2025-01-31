@@ -34,7 +34,7 @@ const Page = () => {
         <Button
         target=""  
           text={<><FaGraduationCap className="mr-3 text-2xl" />1st Semester</>} 
-          href="/practice/first" 
+          href="/practice/first/question" 
         />
         <Button
         target=""  

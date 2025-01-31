@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
     // Run the Python script
     const result = await executePythonCode(filePath);
 
-    console.log("Answer is:- ", result.stdout);
+    // console.log("Answer is:- ", result.stdout);
     return NextResponse.json({
       message: "Task completed successfully",
       output: result.stdout,

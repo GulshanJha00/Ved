@@ -118,9 +118,7 @@ const Page = () => {
         </div>
 
         <div className="flex-grow">
-          <Editor
-          
-          
+          <Editor   
             height="60%"
             onChange={(value) => codeChange(value)} // value is now guaranteed to be a string
             value={code || ""}  // Ensures that 'value' is always a string

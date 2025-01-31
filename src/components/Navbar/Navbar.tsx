@@ -21,8 +21,8 @@ const Navbar = () => {
       <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
         <li><Link href="/">Home</Link></li>
         <li><Link href="/notes">Get Notes</Link></li>
-        <li><Link href="/about">About Us</Link></li>
-        <li><Link href="/help">Need Help?</Link></li>
+        <li><Link href="/nav/about">About Us</Link></li>
+        <li><Link href="/nav/help">Need Help?</Link></li>
       </ul>
       <div 
         className={`${styles.hamburger} ${isMenuOpen ? styles.hamburgerOpen : ''}`} 

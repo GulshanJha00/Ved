@@ -1,0 +1,26 @@
+[
+    { "number": 1, "text": "Print 'Hello World' (Explained by teacher)", "practice": "question/1", "expected_output": "Hello World" },
+    { "number": 1.1, "text": "Print 'Hello World' (Try it on Hackerrank)", "practice": "https://www.hackerrank.com/challenges/30-hello-world/problem", "expected_output": "Hello World" },
+    { "number": 2, "text": "Print 'Code now, nap later!'", "practice": "question/2", "expected_output": "Code now, nap later!" },
+    { "number": 3, "text": "Print the number 2 (it should be an int)", "practice": "question/3", "expected_output": "2" },
+    
+    { "number": 4, "text": "Add 2 to 2 and print the result (explained by teacher)", "practice": "question/4", "expected_output": "4" },
+    { "number": 5, "text": "Subtract 2 from 2 and print the result", "practice": "question/5", "expected_output": "0" },
+    { "number": 6, "text": "Multiply 2 by 2 and print the result", "practice": "question/6", "expected_output": "4" },
+    { "number": 7, "text": "Divide 2 by 2 and print the result", "practice": "question/7", "expected_output": "1" },
+    { "number": 8, "text": "Print 2 raised to the power of 3", "practice": "question/8", "expected_output": "8" },
+    { "number": 9, "text": "Print the remainder when 7 is divided by 3 using the modulus operator", "practice": "question/9", "expected_output": "1" },
+  
+    { "number": 10, "text": "Concatenate 'NIE' and 'Ved' using the plus operator and print the result", "practice": "question/10", "expected_output": "NIEVed" },
+    { "number": 11, "text": "Print 'one piece is real' 5 times using the '*' operator", "practice": "question/11", "expected_output": "'one piece is real' one piece is real' one piece is real' one piece is real' one piece is real'" },
+    { "number": 12, "text": "Print the result of 10 > 5 (use the comparison operator)", "practice": "question/12", "expected_output": "True" },
+    { "number": 13, "text": "Check if 'apple' is equal to 'banana' using the equality operator", "practice": "question/13", "expected_output": "False" },
+    { "number": 14, "text": "Print 5 and 0 using the 'and' operator", "practice": "question/14", "expected_output": "0" },
+    { "number": 15, "text": "Print 5 or 0 using the 'or' operator", "practice": "question/15", "expected_output": "5" },
+    { "number": 16, "text": "Assign 10 to x and print it", "practice": "question/16", "expected_output": "10" },
+    { "number": 17, "text": "Assign 10 to a valid variable and print it", "practice": "question/17", "expected_output": "10" },
+    { "number": 18, "text": "Ask the user for an integer input, assign it to a variable, and print it", "practice": "question/18", "expected_output": "User input number" },
+    { "number": 19, "text": "Ask the user for an integer input, assign it to a variable, add 10 to it, and print the result", "practice": "question/19", "expected_output": "User input + 10" },
+    { "number": 20, "text": "Ask the user for an integer input, assign it to a variable, check if it is 10, and print 'YES' if it is or 'NO' if it is not", "practice": "question/20", "expected_output": "YES or NO depending on user input" }
+  ]
+  
