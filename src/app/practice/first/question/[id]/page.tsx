@@ -90,21 +90,26 @@ const QuestionPage = () => {
     }
   };
 
-  const validateTestCase = (output: string) => {
-    if (!question) {
-      console.error("Question not found");
+  const validateTestCase = (Useroutput: string) => {
+    if (!question || !question.test_cases) {
+      console.error("Question or test cases not found");
       return;
     }
-    const isCorrect = output.trim() === question.expected_output.trim();
-    setTestResult(isCorrect ? "success" : "fail");
-
-    if (isCorrect) {
-      toast.success("✅ Test Case Passed!");
+  
+    // Check if all test cases pass
+    const allPassed = question.test_cases.every(testCase => 
+      Useroutput.trim() === testCase.output
+    );
+  
+    setTestResult(allPassed ? "success" : "fail");
+  
+    if (allPassed) {
+      toast.success("✅ All Test Cases Passed!");
     } else {
-      toast.error("❌ Test Case Failed!");
+      toast.error("❌ Some Test Cases Failed!");
     }
   };
-
+  
 
   return (
     <>
