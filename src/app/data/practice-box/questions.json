@@ -1,26 +1,506 @@
 [
-    { "number": 1, "text": "Print 'Hello World' (Explained by teacher)", "practice": "question/1", "expected_output": "Hello World" },
-    { "number": 1.1, "text": "Print 'Hello World' (Try it on Hackerrank)", "practice": "https://www.hackerrank.com/challenges/30-hello-world/problem", "expected_output": "Hello World" },
-    { "number": 2, "text": "Print 'Code now, nap later!'", "practice": "question/2", "expected_output": "Code now, nap later!" },
-    { "number": 3, "text": "Print the number 2 (it should be an int)", "practice": "question/3", "expected_output": "2" },
-    
-    { "number": 4, "text": "Add 2 to 2 and print the result (explained by teacher)", "practice": "question/4", "expected_output": "4" },
-    { "number": 5, "text": "Subtract 2 from 2 and print the result", "practice": "question/5", "expected_output": "0" },
-    { "number": 6, "text": "Multiply 2 by 2 and print the result", "practice": "question/6", "expected_output": "4" },
-    { "number": 7, "text": "Divide 2 by 2 and print the result", "practice": "question/7", "expected_output": "1" },
-    { "number": 8, "text": "Print 2 raised to the power of 3", "practice": "question/8", "expected_output": "8" },
-    { "number": 9, "text": "Print the remainder when 7 is divided by 3 using the modulus operator", "practice": "question/9", "expected_output": "1" },
-  
-    { "number": 10, "text": "Concatenate 'NIE' and 'Ved' using the plus operator and print the result", "practice": "question/10", "expected_output": "NIEVed" },
-    { "number": 11, "text": "Print 'one piece is real' 5 times using the '*' operator", "practice": "question/11", "expected_output": "'one piece is real' one piece is real' one piece is real' one piece is real' one piece is real'" },
-    { "number": 12, "text": "Print the result of 10 > 5 (use the comparison operator)", "practice": "question/12", "expected_output": "True" },
-    { "number": 13, "text": "Check if 'apple' is equal to 'banana' using the equality operator", "practice": "question/13", "expected_output": "False" },
-    { "number": 14, "text": "Print 5 and 0 using the 'and' operator", "practice": "question/14", "expected_output": "0" },
-    { "number": 15, "text": "Print 5 or 0 using the 'or' operator", "practice": "question/15", "expected_output": "5" },
-    { "number": 16, "text": "Assign 10 to x and print it", "practice": "question/16", "expected_output": "10" },
-    { "number": 17, "text": "Assign 10 to a valid variable and print it", "practice": "question/17", "expected_output": "10" },
-    { "number": 18, "text": "Ask the user for an integer input, assign it to a variable, and print it", "practice": "question/18", "expected_output": "User input number" },
-    { "number": 19, "text": "Ask the user for an integer input, assign it to a variable, add 10 to it, and print the result", "practice": "question/19", "expected_output": "User input + 10" },
-    { "number": 20, "text": "Ask the user for an integer input, assign it to a variable, check if it is 10, and print 'YES' if it is or 'NO' if it is not", "practice": "question/20", "expected_output": "YES or NO depending on user input" }
-  ]
-  
+  {
+    "number": 1,
+    "text": "Print 'Hello World' (Explained by teacher)",
+    "practice": "question/1",
+    "expected_output": "Hello World",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "Hello World"
+      }
+    ]
+  },
+  {
+    "number": 1.1,
+    "text": "Print 'Hello World' (Try it on Hackerrank)",
+    "practice": "https://www.hackerrank.com/challenges/30-hello-world/problem",
+    "expected_output": "Hello World",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "Hello World"
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "text": "Print 'Code now, nap later!'",
+    "practice": "question/2",
+    "expected_output": "Code now, nap later!",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "Code now, nap later!"
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "text": "Print the number 2 (it should be an int)",
+    "practice": "question/3",
+    "expected_output": "2",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "2"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "text": "Add 2 to 2 and print the result (explained by teacher)",
+    "practice": "question/4",
+    "expected_output": "4",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "4"
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "text": "Subtract 2 from 2 and print the result",
+    "practice": "question/5",
+    "expected_output": "0",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "0"
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "text": "Multiply 2 by 2 and print the result",
+    "practice": "question/6",
+    "expected_output": "4",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "4"
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "text": "Divide 2 by 2 and print the result",
+    "practice": "question/7",
+    "expected_output": "1",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "1"
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "text": "Print 2 raised to the power of 3",
+    "practice": "question/8",
+    "expected_output": "8",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "8"
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "text": "Print the remainder when 7 is divided by 3 using the modulus operator",
+    "practice": "question/9",
+    "expected_output": "1",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "1"
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "text": "Concatenate 'NIE' and 'Ved' using the plus operator and print the result",
+    "practice": "question/10",
+    "expected_output": "NIEVed",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "NIEVed"
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "text": "Print 'one piece is real' 5 times using the '*' operator",
+    "practice": "question/11",
+    "expected_output": "'one piece is real' 'one piece is real' 'one piece is real' 'one piece is real' 'one piece is real'",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "'one piece is real' 'one piece is real' 'one piece is real' 'one piece is real' 'one piece is real'"
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "text": "Print the result of 10 > 5 (use the comparison operator)",
+    "practice": "question/12",
+    "expected_output": "True",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "True"
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "text": "Check if 'apple' is equal to 'banana' using the equality operator",
+    "practice": "question/13",
+    "expected_output": "False",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "False"
+      }
+    ]
+  },
+  {
+    "number": 14,
+    "text": "Print 5 and 0 using the 'and' operator",
+    "practice": "question/14",
+    "expected_output": "0",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "0"
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "text": "Print 5 or 0 using the 'or' operator",
+    "practice": "question/15",
+    "expected_output": "5",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "5"
+      }
+    ]
+  },
+  {
+    "number": 16,
+    "text": "Assign 10 to x and print it",
+    "practice": "question/16",
+    "expected_output": "10",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "10"
+      }
+    ]
+  },
+  {
+    "number": 17,
+    "text": "Assign 10 to a valid variable and print it",
+    "practice": "question/17",
+    "expected_output": "10",
+    "test_cases": [
+      {
+        "input": "",
+        "output": "10"
+      }
+    ]
+  },
+  {
+    "number": 18,
+    "text": "Ask the user for an integer input, assign it to a variable, and print it",
+    "practice": "question/18",
+    "expected_output": "User input number",
+    "test_cases": [
+      {
+        "input": "5",
+        "output": "5"
+      },
+      {
+        "input": "10",
+        "output": "10"
+      }
+    ]
+  },
+  {
+    "number": 19,
+    "text": "Ask the user for an integer input, assign it to a variable, add 10 to it, and print the result",
+    "practice": "question/19",
+    "expected_output": "User input + 10",
+    "test_cases": [
+      {
+        "input": "5",
+        "output": "15"
+      },
+      {
+        "input": "10",
+        "output": "20"
+      }
+    ]
+  },
+  {
+    "number": 20,
+    "text": "Ask the user for an integer input, assign it to a variable, check if it is 10, and print 'YES' if it is or 'NO' if it is not",
+    "practice": "question/20",
+    "expected_output": "YES or NO depending on user input",
+    "test_cases": [
+      {
+        "input": "10",
+        "output": "YES"
+      },
+      {
+        "input": "5",
+        "output": "NO"
+      }
+    ]
+  },
+  {
+    "number": 21,
+    "text": "Ask the user for an integer input, assign it to a variable, check if it is even or odd, and print 'Even' or 'Odd' accordingly.",
+    "practice": "question/21",
+    "expected_output": "Even or Odd depending on user input",
+    "test_cases": [
+      {
+        "input": "4",
+        "output": "Even"
+      },
+      {
+        "input": "7",
+        "output": "Odd"
+      },
+      {
+        "input": "0",
+        "output": "Even"
+      },
+      {
+        "input": "-3",
+        "output": "Odd"
+      }
+    ]
+  },
+  {
+    "number": 22,
+    "text": "Ask the user for an integer input, assign it to a variable, check if it is positive, negative, or zero, and print the corresponding result.",
+    "practice": "question/22",
+    "expected_output": "Positive, Negative, or Zero depending on user input",
+    "test_cases": [
+      {
+        "input": "10",
+        "output": "Positive"
+      },
+      {
+        "input": "-5",
+        "output": "Negative"
+      },
+      {
+        "input": "0",
+        "output": "Zero"
+      },
+      {
+        "input": "-100",
+        "output": "Negative"
+      }
+    ]
+  },
+  {
+    "number": 23,
+    "text": "Ask the user for two integer inputs, assign them to variables, and print the greater number. If both are equal, print 'Equal'.",
+    "practice": "question/23",
+    "expected_output": "Greater number or 'Equal' if both numbers are the same",
+    "test_cases": [
+      {
+        "input": "5 10",
+        "output": "10"
+      },
+      {
+        "input": "20 15",
+        "output": "20"
+      },
+      {
+        "input": "8 8",
+        "output": "Equal"
+      },
+      {
+        "input": "-3 2",
+        "output": "2"
+      }
+    ]
+  },
+  {
+    "number": 24,
+    "text": "Ask the user for an integer input, assign it to a variable, check if it is divisible by 5, and print 'Divisible by 5' or 'Not Divisible by 5'.",
+    "practice": "question/24",
+    "expected_output": "'Divisible by 5' or 'Not Divisible by 5' depending on user input",
+    "test_cases": [
+      {
+        "input": "25",
+        "output": "Divisible by 5"
+      },
+      {
+        "input": "11",
+        "output": "Not Divisible by 5"
+      },
+      {
+        "input": "0",
+        "output": "Divisible by 5"
+      },
+      {
+        "input": "-15",
+        "output": "Divisible by 5"
+      }
+    ]
+  },
+  {
+    "number": 25,
+    "text": "Ask the user for their age, assign it to a variable, and check if they are eligible to vote (18 or above). Print 'Eligible to vote' or 'Not eligible to vote'.",
+    "practice": "question/25",
+    "expected_output": "'Eligible to vote' or 'Not eligible to vote' depending on user input",
+    "test_cases": [
+      {
+        "input": "20",
+        "output": "Eligible to vote"
+      },
+      {
+        "input": "17",
+        "output": "Not eligible to vote"
+      },
+      {
+        "input": "18",
+        "output": "Eligible to vote"
+      },
+      {
+        "input": "16",
+        "output": "Not eligible to vote"
+      }
+    ]
+  },
+  {
+    "number": 26,
+    "text": "Ask the user for a year input, assign it to a variable, check if it is a leap year or not, and print 'Leap Year' or 'Not a Leap Year'.",
+    "practice": "question/26",
+    "expected_output": "'Leap Year' or 'Not a Leap Year' depending on user input",
+    "test_cases": [
+      {
+        "input": "2020",
+        "output": "Leap Year"
+      },
+      {
+        "input": "1900",
+        "output": "Not a Leap Year"
+      },
+      {
+        "input": "2000",
+        "output": "Leap Year"
+      },
+      {
+        "input": "2023",
+        "output": "Not a Leap Year"
+      }
+    ]
+  },
+  {
+    "number": 27,
+    "text": "Ask the user for their marks (out of 100), assign it to a variable, and print 'Pass' if marks are 40 or more, otherwise print 'Fail'.",
+    "practice": "question/27",
+    "expected_output": "'Pass' or 'Fail' depending on user input",
+    "test_cases": [
+      {
+        "input": "85",
+        "output": "Pass"
+      },
+      {
+        "input": "39",
+        "output": "Fail"
+      },
+      {
+        "input": "40",
+        "output": "Pass"
+      },
+      {
+        "input": "25",
+        "output": "Fail"
+      }
+    ]
+  },
+  {
+    "number": 28,
+    "text": "Ask the user for a single character input, assign it to a variable, and check if it is a vowel (a, e, i, o, u). Print 'Vowel' or 'Consonant'.",
+    "practice": "question/28",
+    "expected_output": "'Vowel' or 'Consonant' depending on user input",
+    "test_cases": [
+      {
+        "input": "a",
+        "output": "Vowel"
+      },
+      {
+        "input": "b",
+        "output": "Consonant"
+      },
+      {
+        "input": "u",
+        "output": "Vowel"
+      },
+      {
+        "input": "z",
+        "output": "Consonant"
+      }
+    ]
+  },
+  {
+    "number": 29,
+    "text": "Ask the user for three integer inputs, assign them to variables, and print the largest number.",
+    "practice": "question/29",
+    "expected_output": "The largest number among the three user inputs",
+    "test_cases": [
+      {
+        "input": "5 10 15",
+        "output": "15"
+      },
+      {
+        "input": "20 30 10",
+        "output": "30"
+      },
+      {
+        "input": "7 7 7",
+        "output": "7"
+      },
+      {
+        "input": "-5 -2 -8",
+        "output": "-2"
+      }
+    ]
+  },
+  {
+    "number": 30,
+    "text": "Ask the user for a username input, assign it to a variable, and check if it matches a predefined username. Print 'Access Granted' if it matches, otherwise print 'Access Denied'.",
+    "practice": "question/30",
+    "expected_output": "'Access Granted' or 'Access Denied' depending on user input",
+    "test_cases": [
+      {
+        "input": "admin",
+        "output": "Access Granted"
+      },
+      {
+        "input": "user123",
+        "output": "Access Denied"
+      },
+      {
+        "input": "Admin",
+        "output": "Access Denied"
+      },
+      {
+        "input": "guest",
+        "output": "Access Denied"
+      }
+    ]
+  }
+]

@@ -31,7 +31,7 @@ const QuestionPage = () => {
   const [isExecuting, setIsExecuting] = useState(false); // New state to track execution status
   const [isVisible, setIsVisible] = useState(true);
 
-  
+
 
   // Use useMemo to optimize re-rendering based on `id`
   const question = useMemo(
@@ -105,39 +105,39 @@ const QuestionPage = () => {
     }
   };
 
+
   return (
     <>
-     <div
-        className={`w-full h-full absolute top-0 left-0 bg-black bg-opacity-50 z-40 transition-all ${
-          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+      <div
+        className={`w-full h-full absolute top-0 left-0 bg-black bg-opacity-50 z-40 transition-all ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
       />
       {isVisible && (
-      <div
-        className="w-1/2 h-1/2 absolute z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-lg shadow-lg flex flex-col  justify-between bg-yellow-100 transition-opacity duration-1000 opacity-100"
-      >
-        <div className="flex justify-between w-full">
-          <h1 className="text-xl font-semibold text-yellow-700">
-            Attention: Compiler Under Construction
-          </h1>
-          <FaTimes
-            onClick={handleClose}
-            className="text-xl text-red-500 cursor-pointer ml-auto"
-          />
+        <div
+          className="w-1/2 h-1/2 absolute z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-lg shadow-lg flex flex-col  justify-between bg-yellow-100 transition-opacity duration-1000 opacity-100"
+        >
+          <div className="flex justify-between w-full">
+            <h1 className="text-xl font-semibold text-yellow-700">
+              Attention: Compiler Under Construction
+            </h1>
+            <FaTimes
+              onClick={handleClose}
+              className="text-xl text-red-500 cursor-pointer ml-auto"
+            />
+          </div>
+          <p className="mt-3 text-lg text-yellow-700">
+            ⚠️ The compiler is still under construction. While executing, the output may sometimes match the expected result, but it could still show incorrect output. <b className="text-green-600">Please be aware of this.</b>
+          </p>
+          <p className="mt-3 text-lg text-yellow-700">
+            ⛔ Each test case is case-sensitive, so ensure that every letter is correctly capitalized or lowercase as expected.
+          </p>
         </div>
-        <p className="mt-3 text-lg text-yellow-700">
-          ⚠️ The compiler is still under construction. While executing, the output may sometimes match the expected result, but it could still show incorrect output. <b className="text-green-600">Please be aware of this.</b>
-        </p>
-        <p className="mt-3 text-lg text-yellow-700">
-          ⛔ Each test case is case-sensitive, so ensure that every letter is correctly capitalized or lowercase as expected.
-        </p>
-      </div>
-    )}
+      )}
 
 
       <div className="flex h-screen bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white">
         {/* Left Panel */}
-        <div className="w-1/3 p-6 rounded-r-3xl bg-gray-800 shadow-lg">
+        <div className="w-1/3 p-6 rounded-r-3xl bg-gray-800 shadow-lg overflow-y-scroll scroll-smooth scrollbar-hidden">
           <h1 className="text-4xl font-bold text-center mb-5 text-purple-400">
             VedPad{" "}
           </h1>
@@ -158,12 +158,21 @@ const QuestionPage = () => {
 
             {/* Test Case Results */}
             <div className="mt-4 p-4 bg-gray-800 rounded-lg shadow-md">
-              <h1 className="text-lg font-bold">Test Case</h1>
-              <div className="mt-2">
-                <h1>Test Case 1:</h1>
-                <pre className="bg-gray-900 p-3 rounded-md text-green-400">
-                  {question?.expected_output}
-                </pre>
+              <h1 className="text-lg font-bold">Test Cases</h1>
+              <div className="">
+                {question?.test_cases.map((test, index) => (
+                  <div key={index} className="mt-2">
+                    <h1 className="text-lg">Test Case {index + 1}:</h1>
+                    <h1>Input:</h1>
+                    <pre className="bg-gray-900 p-3 rounded-md text-green-400">
+                      {test.input}
+                    </pre>
+                    <h1>Output:</h1>
+                    <pre className="bg-gray-900 p-3 rounded-md text-green-400">
+                      {test.output}
+                    </pre>
+                  </div>
+                ))}
               </div>
               <div className="mt-3">
                 {testResult === "pending" && (
