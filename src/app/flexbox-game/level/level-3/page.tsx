@@ -88,8 +88,8 @@ const Page = () => {
             <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container" target="_blank" className="inline-block">
               <FlexBoxButton textToDisplay="Read Docs" />
             </Link>
-              <Link href={`./level-${level - 1}`} className="inline-block text-4xl align-middle"><IoMdArrowDropleftCircle /></Link>&nbsp;&nbsp;&nbsp;Prev &nbsp;&nbsp;&nbsp; 
-              Next<Link href={`./level-${level + 1}`} className="inline-block text-4xl align-middle"><IoMdArrowDroprightCircle /></Link>
+              <Link href={`./level-${level - 1}`} className="inline-block text-xl align-top border-2 rounded-xl px-4 py-[5px] bg-teal-950"><IoMdArrowDropleftCircle size={32} className="inline-block" /> Prev</Link> 
+              <Link href={`./level-${level +1}`} className="inline-block text-xl align-top border-2 rounded-xl px-4 py-[5px] bg-teal-950">Next <IoMdArrowDroprightCircle size={32} className="inline-block" /></Link> 
           </div>
         </div>
 

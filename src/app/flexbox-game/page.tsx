@@ -6,7 +6,7 @@ import "./flexbox.css"
 
 const Page = () => {
 
-  const myText = "Click Me";
+  const myText = "Explore";
 
   return (
     <div className="flex h-[88.4vh] justify-center items-center testClass text-white ">
