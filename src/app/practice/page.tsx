@@ -33,7 +33,7 @@ const Page = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
         <Button
         target=""  
-          text={<><FaGraduationCap className="mr-3 text-2xl" />Challenge</>} 
+          text={<><FaGraduationCap className="mr-3 text-2xl" />Challenges</>} 
           href="/practice/first/question" 
         />
         <Button
@@ -43,7 +43,7 @@ const Page = () => {
         />
         <Button
         target=""  
-          text={<><FaChalkboardTeacher className="mr-3 text-2xl" />Interview Preparation</>} 
+          text={<><FaChalkboardTeacher className="mr-3 text-2xl" />Interview Prep</>} 
           href="/practice/interview" 
         />
         <Button
