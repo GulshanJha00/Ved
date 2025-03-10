@@ -33,28 +33,28 @@ const Page = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
         <Button
         target=""  
-          text={<><FaGraduationCap className="mr-3 text-2xl" />1st Semester</>} 
+          text={<><FaGraduationCap className="mr-3 text-2xl" />Challenge</>} 
           href="/practice/first/question" 
         />
         <Button
         target=""  
-          text={<><FaBook className="mr-3 text-2xl" />2nd Semester</>} 
-          href="/second" 
+          text={<><FaBook className="mr-3 text-2xl" />Development Space</>} 
+          href="/practice/dev" 
         />
         <Button
         target=""  
-          text={<><FaChalkboardTeacher className="mr-3 text-2xl" />3rd Semester</>} 
-          href="/third" 
+          text={<><FaChalkboardTeacher className="mr-3 text-2xl" />Interview Preparation</>} 
+          href="/practice/interview" 
         />
         <Button
         target=""  
-          text={<><FaClipboardList className="mr-3 text-2xl" />4th Semester</>} 
-          href="/fourth" 
+          text={<><FaClipboardList className="mr-3 text-2xl" />DSA Space</>} 
+          href="/practice/dsa" 
         />
         <Button
         target=""  
-          text={<><FaUniversity className="mr-3 text-2xl" />5th Semester</>} 
-          href="/fifth" 
+          text={<><FaUniversity className="mr-3 text-2xl" />ML Space</>} 
+          href="/practice/ml" 
         />
       </div>
 
