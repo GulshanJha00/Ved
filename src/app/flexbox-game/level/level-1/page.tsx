@@ -6,7 +6,7 @@ import DisCharge from "@/../public/Flexbox/DischargedRobot.png";
 import Station from "@/../public/Flexbox/ChargingPoint.png";
 import { ToastContainer, toast } from "react-toastify";
 import FlexBoxButton from "@/components/FlexboxButton";
-import "./../level.css";
+import "@/app/flexbox-game/flexbox.css"
 import Image from "next/image";
 import { IoMdArrowDropleftCircle } from "react-icons/io";
 import { IoMdArrowDroprightCircle } from "react-icons/io";

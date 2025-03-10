@@ -1,5 +1,5 @@
 .testClass {
-    background-image: url("./../../../../public/Flexbox/bgMain.jpeg");
+    background-image: url("./../../../public/Flexbox/bgMain.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
