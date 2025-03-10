@@ -4,6 +4,7 @@ import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
 import Navbar from "@/components/Navbar/Navbar";
+import { Rowdies } from "next/font/google";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,6 +16,12 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+const rowdies = Rowdies({
+  subsets: ["latin"],
+  variable: "--rowdies",
+  weight:  "300"
+})
 
 export const metadata: Metadata = {
   title: "NIE VED",
@@ -70,6 +77,7 @@ export default function RootLayout({
 
           {children}
         </Suspense>
+        <span className={`${rowdies.variable}`}></span>
       </body>
     </html>
   );

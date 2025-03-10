@@ -1,0 +1,23 @@
+.testClass {
+    background-image: url("./../../../../public/Flexbox/bgMain.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.animated {
+    animation-name: wobble;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+
+    /* transition: all ease-in-out 0.4s; */
+}
+
+@keyframes wobble {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-1px) rotate(-0.5deg); }
+    40% { transform: translateX(1px) rotate(0.5deg); }
+    60% { transform: translateX(-1px) rotate(-0.5deg); }
+    80% { transform: translateX(2px) rotate(0.5deg); }
+    100% { transform: translateX(0); }
+  }
