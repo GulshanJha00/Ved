@@ -11,6 +11,13 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: 'Merriweather', serif;
+
+}
+
+.no-scrollbar{
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ and Edge */
+  overflow-x: hidden;
 }
 
 .rowdies-light {
