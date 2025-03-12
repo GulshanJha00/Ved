@@ -17,7 +17,7 @@ const Page = () => {
     },
     {
       tag1: FaLaptopCode, // Development-related tasks
-      title1: "Development Space",
+      title1: "Dev Space",
       pTag1: "Hands-on development challenges and projects",
       p2Tag1: "Practice with bug fixes, design challenges, component building, and interactive coding games.",
       link:"/practice/dev"
@@ -92,7 +92,7 @@ const Page = () => {
           to a larger device to access it.
         </p>
       </div>
-      <nav className="fixed top-0 left-0 w-full bg-black text-white shadow-md z-50">
+      <nav className="fixed hidden lg:block top-0 left-0 w-full bg-black text-white shadow-md z-50">
         <div className="flex justify-between items-center py-4 px-8">
           <h1 className="text-xl font-bold">Development Space</h1>
           <ul className="flex gap-6">
@@ -129,7 +129,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="hidden practice-Hero h-screen bg-[#FFFCE6] md:flex flex-col items-center pt-20">
+      <div className="hidden practice-Hero h-screen bg-[#FFFCE6] lg:flex flex-col items-center pt-20">
         <h1 className="practice-Hero-head text-6xl mb-4 font-extrabold font-serif">
           Practice Spaces
         </h1>
@@ -138,7 +138,7 @@ const Page = () => {
           different areas.
         </p>
 
-        <div className="practice-Hero-container grid lg:grid-cols-3 grid-cols-1 gap-4 h-96">
+        <div className="practice-Hero-container grid lg:grid-cols-3 grid-cols-1 gap-8 h-96">
 
           {
             json.map((element) => (
