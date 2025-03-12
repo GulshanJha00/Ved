@@ -1,35 +1,26 @@
-"use client"
-import Link from "next/link";
-import React from "react";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+"use client";
+import Link from 'next/link';
+import React from 'react';
+import StyleButton1 from '@/components/StyleButton1';
+import "../../../flexbox-game/flexbox.css"
 
-const ComingSoon = () => {
+const Page = () => {
 
-
+  const myText = "Explore";
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-center p-6">
-      {/* Title */}
-      <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fadeIn">🚀 Coming Soon</h1>
-      <p className="text-lg md:text-2xl opacity-80">Something amazing is on its way. Stay tuned!</p>
-
-      
-      {/* Social Links */}
-      <div className="flex space-x-6 mt-8">
-        <Link href="https://x.com/GulshanJha0" target="_blank" className="text-2xl hover:text-gray-300 transition">
-          <FaTwitter />
-        </Link>
-        <Link href="https://www.linkedin.com/in/nie-ved-521765332/" target="_blank" className="text-2xl hover:text-gray-300 transition">
-          <FaLinkedin />
-        </Link>
-        <Link href="https://github.com/GulshanJha00" target="_blank" className="text-2xl hover:text-gray-300 transition">
-          <FaGithub />
-        </Link>
-      </div>
-
-      
+    <div className="flex h-full sm:h-[calc(100vh-5rem)] justify-center items-center testClass text-white ">
+        <div className='text-center'>
+          <h1 className='md:text-5xl  text-3xl rowdies-bold my-4'>Welcome to <span className='head-animated-flexbox bg-clip-text text-transparent border-b-4 rounded-sm'>GridX</span></h1>
+          <div className='rowdies-regular md:w-2/3 mx-auto leading-8 max-md:text-sm'> "Ved Grid" transforms learning CSS Grid into an exciting puzzle adventure where you strategically place elements on a grid-based map. Each level introduces new Grid properties, helping you master layout techniques through interactive challenges and real-time visual feedback.</div>
+          <div>
+            <Link href="./grid/level/level-1" className='text-md md:text-xl' >
+            <StyleButton1 textToDisplay={myText}/>
+            </Link>
+          </div>
+        </div> 
     </div>
   );
-};
+}
 
-export default ComingSoon;
+export default Page;
