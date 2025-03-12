@@ -3,8 +3,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
-import Navbar from "@/components/Navbar/Navbar";
 import { Rowdies } from "next/font/google";
+import NavbarWrapper from "./NavbarWrapper";
+import Footer from "@/components/Footer";
+import FoooterWrapper from "./FooterWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +35,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <head>
@@ -73,9 +76,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased no-scrollbar`}
       >
         <Suspense fallback={<Loading />}>
-          <Navbar />
+          <NavbarWrapper /> 
 
           {children}
+          <FoooterWrapper/>
         </Suspense>
         <span className={`${rowdies.variable}`}></span>
       </body>

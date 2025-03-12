@@ -1,0 +1,89 @@
+.practice-header{
+    animation: fadeTop 1s linear;
+}
+
+.practice-p{
+    animation: fadeBtm 1s linear;
+
+}
+
+.practice-emoji{
+    animation: down 1s linear infinite alternate;
+}
+
+
+.practice-Hero-container{
+    animation: animate 1s linear;
+    animation-timeline:view();
+    animation-range: entry 0 cover 40%;
+}
+
+.practice-Hero-head{
+    animation: rightIncoming linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 60%;
+}
+.practice-Hero-p{
+    animation: leftIncoming linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 60%;
+}
+
+
+@keyframes rightIncoming{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes leftIncoming{
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes animate{
+    from{
+        opacity: 0;
+        scale:0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+@keyframes fadeTop {
+    from{
+        opacity: 0;
+        margin-top: -40px;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fadeBtm {
+    0%{
+        opacity: 0;
+        margin-top: 40px;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes down {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(40px);
+    }
+}
