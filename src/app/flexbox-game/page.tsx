@@ -1,25 +1,32 @@
 "use client";
 import Link from 'next/link';
 import React from 'react';
-import StyleButton1 from './../../components/StyleButton1';
+// import StyleButton1 from './../../components/StyleButton1';
 import "./flexbox.css"
+import FuturisticBackground from '@/components/questionBox/futuristicBg';
 
 const Page = () => {
 
-  const myText = "Explore";
 
   return (
-    <div className="flex h-full sm:h-[calc(100vh-5rem)] justify-center items-center testClass text-white ">
-        <div className='text-center'>
-          <h1 className='md:text-5xl  text-3xl rowdies-bold my-4'>Welcome to <span className='head-animated-flexbox bg-clip-text text-transparent border-b-4 rounded-sm'>Ved Flex!</span></h1>
-          <div className='rowdies-regular md:w-2/3 mx-auto leading-8 max-md:text-sm'>Ved Flex transforms learning Flexbox into an engaging adventure where you guide a character to its destination by writing the correct CSS properties. Each level introduces new Flexbox concepts, helping you understand layout alignment through real-time animations.</div>
-          <div>
-            <Link href="./flexbox-game/level/level-1" className='text-md md:text-xl' >
-            <StyleButton1 textToDisplay={myText}/>
+    <main className="min-h-screen flex items-center justify-center">
+      <div className="relative w-full h-screen overflow-hidden">
+        <FuturisticBackground />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center z-10 px-4">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rowdies-bold ">
+                Welcome to <span className="border-b-4 rounded-sm">Ved Flex!</span>
+              </span>
+              <span className='text-xl block w-2/3 mx-auto font-sans font-normal my-6'>Ved Flex transforms learning Flexbox into an engaging adventure where you guide a character to its destination by writing the correct CSS properties. Each level introduces new Flexbox concepts, helping you understand layout alignment through real-time animations.</span>
+            </h1>
+            <Link href="./flexbox-game/level/level-1" className="rowdies-regular text-2xl md:text-xl text-blue-100 max-w-2xl mx-auto border-2 px-6 py-3 rounded-xl hover:scale-120">
+              Explore
             </Link>
           </div>
-        </div> 
-    </div>
+        </div>
+      </div>
+    </main>
   );
 }
 
