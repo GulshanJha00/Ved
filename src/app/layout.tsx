@@ -5,7 +5,6 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { Rowdies } from "next/font/google";
 import NavbarWrapper from "./NavbarWrapper";
-import Footer from "@/components/Footer";
 import FoooterWrapper from "./FooterWrapper";
 
 const geistSans = localFont({

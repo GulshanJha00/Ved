@@ -41,6 +41,8 @@ export default function NavbarWrapper() {
   const pathname = usePathname()
 
   // Hide Navbar if the route is "/practice"
+  const path2 = pathname.startsWith("/practice/first/")
+  if(path2) return <Navbar/>
   const pathName = pathname.startsWith("/practice")
   if (pathName) return (
     <nav className="fixed top-0 left-0 w-full bg-black text-white shadow-md z-50">
