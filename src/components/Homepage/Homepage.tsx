@@ -35,7 +35,7 @@ const Homepage = () => {
           target="_blank"
           className="bg-white text-blue-700 border-2 border-blue-700 py-3 px-8 rounded-md text-lg sm:text-xl font-semibold hover:bg-blue-700 hover:text-white hover:border-white transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg shadow-xl focus:outline-none focus:ring-4 focus:ring-[#6a4c39]"
         >
-          Practice
+          Ved Labs
         </Link>
         </div>
 
