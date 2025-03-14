@@ -129,7 +129,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="hidden practice-Hero h-screen bg-[#FFFCE6] lg:flex flex-col items-center pt-20">
+      <div className="hidden practice-Hero min-h-screen bg-[#FFFCE6] lg:flex flex-col items-center pt-20">
         <h1 className="practice-Hero-head text-6xl mb-4 font-extrabold font-serif">
           Practice Spaces
         </h1>
@@ -138,7 +138,7 @@ const Page = () => {
           different areas.
         </p>
 
-        <div className="practice-Hero-container grid lg:grid-cols-3 grid-cols-1 gap-8 h-96">
+        <div className="practice-Hero-container grid lg:grid-cols-3 grid-cols-1 gap-8 h-full">
 
           {
             json.map((element) => (

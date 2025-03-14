@@ -58,7 +58,7 @@ const Page = () => {
       {/* Main Content */}
       <div className="hidden lg:flex min-h-screen bg-[#ffdd00] flex-col w-screen py-20 px-16 ">
         {/* Title Section */}
-        <div className="w-full max-w-4xl mb-12">
+        <div className="w-full max-w-4xl mb-12 h-full">
           <h1 className="text-3xl font-extrabold font-serif text-black tracking-tight">
             Development Space
           </h1>
@@ -68,7 +68,7 @@ const Page = () => {
         </div>
 
         {/* Challenge Sections */}
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-3 gap-6 h-full">
           {devChallenges.map((challenge, index) => (
             <Link href={challenge.link} key={index}>
               <div className="p-6 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center text-center hover:scale-105 h-64 transition-transform">
