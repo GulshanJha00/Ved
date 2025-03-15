@@ -33,7 +33,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="h-full lg:grid grid-cols-5 text-white">
+      <div className="min-h-screen lg:grid grid-cols-5 text-white">
         {/* Left Panel */}
         <div className="text-4xl col-span-2 bg-cyan-800 border-r-2 border-white  max-lg:hidden">
           <div className="border-b-2 border-white relative p-4 flex">
@@ -99,7 +99,7 @@ const Page = () => {
         </div>
 
         {/* Right Panel */}
-        <div className="text-4xl col-span-3 max-md:hidden testClass max-lg:h-3/4">
+        <div className="text-4xl col-span-3 max-md:hidden testClass max-lg:max-h-screen min-h-[40rem]">
           {/* Charging Station */}
           <div className="absolute right-0">
             <Image src={Station} alt="Charging Station" width={160} height={160} />
@@ -118,7 +118,7 @@ const Page = () => {
         </div>
 
         {/* Downbar */}
-        <div className="text-4xl max-md:hidden col-span-2 bg-cyan-800 border-r-2 text-white border-white lg:hidden">
+        <div className="text-4xl max-md:hidden pb-4 col-span-2 bg-cyan-800 lg:border-r-2 text-white border-white lg:hidden">
           <div className="border-b-2 border-white relative p-4 flex">
             <h1 className="rowdies-regular">Ved Flex</h1>
             <span className="absolute right-4 space-x-2 flex">

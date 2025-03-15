@@ -34,7 +34,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="h-full lg:grid grid-cols-5 text-white">
+      <div className="min-h-screen lg:grid grid-cols-5 text-white">
         {/* Left Panel */}
         <div className="text-4xl col-span-2 bg-cyan-800 border-r-2 border-white max-lg:hidden">
           <div className="border-b-2 border-white relative p-4 flex">
@@ -98,11 +98,11 @@ const Page = () => {
         {/* Right Panel */}
 
 
-        <div className="text-4xl col-span-3 testClass max-lg:h-3/4">
+        <div className="text-4xl max-md:hidden col-span-3 testClass max-lg:max-h-screen min-h-[40rem]">
           {/* Charging Station */}
           <div className="relative z-0">
-            <Image src={Station} alt="Charging Station" width={160} height={160} className="inline-block absolute left-[9.5rem]" />
-            <Image src={Station} alt="Charging Station" width={160} height={160} className="inline-block absolute right-[9.5rem]" />
+            <Image src={Station} alt="Charging Station" width={160} height={160} className="inline-block absolute max-lg:right-[15%] max-xl:right-[13%] right-[16%]" />
+            <Image src={Station} alt="Charging Station" width={160} height={160} className="inline-block absolute max-lg:left-[17%] max-xl:left-[14%] left-[17%]" />
           </div>
 
           {/* Robot Image with User-defined CSS */}
@@ -125,7 +125,7 @@ const Page = () => {
         </div>
 
         {/* Downbar */}
-        <div className="text-4xl col-span-2 bg-cyan-800 border-r-2 text-white border-white max-md:hidden lg:hidden">
+        <div className="text-4xl col-span-2 pb-4 bg-cyan-800 lg:border-r-2 text-white border-white max-md:hidden lg:hidden">
           <div className="border-b-2 border-white relative p-4 flex">
             <h1 className="rowdies-regular">Ved Flex</h1>
             <span className="absolute right-4 space-x-2 flex">

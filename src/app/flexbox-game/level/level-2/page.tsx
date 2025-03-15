@@ -34,9 +34,9 @@ const Page = () => {
 
   return (
     <>
-      <div className="h-full lg:grid grid-cols-5 text-white">
+      <div className="min-h-screen lg:grid grid-cols-5 text-white">
         {/* Left Panel */}
-        <div className="text-4xl col-span-2 bg-cyan-800 border-r-2 border-white max-lg:hidden">
+        <div className="text-4xl col-span-2 bg-cyan-800 lg:border-r-2 border-white max-lg:hidden">
           <div className="border-b-2 border-white relative p-4 flex">
             <h1 className="rowdies-regular">Ved Flex</h1>
             <span className="absolute right-4 space-x-2 flex">
@@ -85,14 +85,14 @@ const Page = () => {
               <span className="">&#125;	</span>
             </div>
           </div>
-          <div className="text-xl mx-4 rowdies-light space-x-4">
+          <div className="text-xl mx-4 rowdies-light space-x-4 max-xl:space-y-4">
             <div onClick={handleCharge} className="inline-block">
               <FlexBoxButton textToDisplay="Apply" />
             </div>
             <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container" target="_blank" className="inline-block">
               <FlexBoxButton textToDisplay="Read Docs" />
             </Link>
-            <div className="block align-top my-4">
+            <div className="sm:inline-block align-top max-sm:my-4 ">
               <Link href={`./level-${level - 1}`} className="inline-block text-xl align-top border-2 rounded-l-full px-4 py-[5px] bg-teal-950"><IoMdArrowDropleftCircle size={32} className="inline-block" /> Prev</Link>
               <Link href={`./level-${level + 1}`} className="inline-block text-xl align-top border-2 rounded-r-full px-4 py-[5px] bg-teal-950">Next <IoMdArrowDroprightCircle size={32} className="inline-block" /></Link>
             </div>
@@ -100,7 +100,7 @@ const Page = () => {
         </div>
 
         {/* Right Panel */}
-        <div className="text-4xl max-md:hidden col-span-3 testClass max-lg:h-3/4">
+        <div className="text-4xl max-md:hidden col-span-3 testClass max-lg:max-h-screen min-h-[40rem]">
           {/* Charging Station */}
           <div className="absolute md:right-[42%] lg:right-[23%] xl:right-[24.5%] ">
             <Image src={Station} alt="Charging Station" width={160} height={160} />
@@ -119,7 +119,7 @@ const Page = () => {
         </div>
 
         {/* Downbar */}
-        <div className="text-4xl col-span-2 bg-cyan-800 border-r-2 text-white border-white max-md:hidden lg:hidden">
+        <div className="text-4xl col-span-2 pb-4 bg-cyan-800 lg:border-r-2 text-white border-white max-md:hidden lg:hidden">
           <div className="border-b-2 border-white relative p-4 flex">
             <h1 className="rowdies-regular">Ved Flex</h1>
             <span className="absolute right-4 space-x-2 flex">
