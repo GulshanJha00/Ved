@@ -16,7 +16,7 @@ const Page = () => {
   const [isCharging, setIsCharging] = useState(false);
   const [input, setInput] = useState("");
 
-  const level = 4;
+  const level = 5;
 
   const handleCharge = () => {
     if (input === "center") {
@@ -95,10 +95,11 @@ const Page = () => {
         </div>
 
         {/* Right Panel */}
-        <div className="text-4xl col-span-3 testClass max-lg:max-h-screen min-h-[40rem] max-md:hidden">
+        <div className="text-4xl col-span-3 testClass h-screen min-h-[40rem] max-md:hidden">
           {/* Charging Station */}
           <div className="relative z-0">
-            <Image src={Station} alt="Charging Station" width={160} height={160} className="inline-block absolute top-64 lg:top-[20.5rem] "/>
+            <Image src={Station} alt="Charging Station" width={160} height={160} className="inline-block absolute top-[39.5rem] "/>
+            <Image src={Station} alt="Charging Station" width={160} height={160} className="inline-block absolute top-[39.5rem] left-40 "/>
           </div>
 
           {/* Robot Image with User-defined CSS */}
@@ -109,7 +110,13 @@ const Page = () => {
               width={144}
               height={144}
               className="z-20 mr-4 "
-              
+            />
+            <Image
+              src={isCharging ? Charge : DisCharge}
+              alt="Robot Status"
+              width={144}
+              height={144}
+              className="z-20 mr-4 "
             />
           </div>
         </div>
@@ -183,9 +190,3 @@ const Page = () => {
 
 
 export default Page;
-
-
-
-
-
-
