@@ -27,4 +27,4 @@ const FlexBoxAds = () => {
   )
 }
 
-export default FlexBoxAds
+export default FlexBoxAds;

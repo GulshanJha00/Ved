@@ -1,19 +1,18 @@
+import Sidebar from "@/components/components-Library/Sidebar";
 import React from "react";
 
 const page = () => {
   return (
-    <div className="h-max w-screen bg-[#D8E1FF] ">
+    <div className="h-max w-screen bg-[#e7f7db] ">
 
 
       <div className="w-full flex h-screen ">
 
 
-        <div className="w-[20%] border-black border-r-[1px] overflow-auto h-full bg-[#69DDFF]">
-
-        </div>
+        <Sidebar />
 
 
-        <div className="w-[80%] overflow-auto h-full ">
+        <div className="w-[85%] overflow-auto h-full ">
           <div className="pt-20 pl-12 font-serif">
             <h1 className="text-4xl font-bold  mb-2">Component Library</h1>
             <p className="text-lg ">
