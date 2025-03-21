@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
 import Button from "@/components/Button";
-import { FaCode, FaJava, FaDna, FaProjectDiagram, FaDatabase } from "react-icons/fa";
+import { FaCode, FaJava, FaDna, FaProjectDiagram, FaDatabase,FaBrain   } from "react-icons/fa";
+import {TbMathSymbols} from "react-icons/tb"
+import {FaPeopleRoof } from "react-icons/fa6"
 import FlexBoxAds from "@/components/flexbox/FlexBoxAds";
 
 const Page = () => {
@@ -46,15 +48,15 @@ const Page = () => {
         />
         <Button 
          target="_blank"
-          text={<><FaDatabase className="mr-3 text-2xl" />Discrete Maths</>} 
+          text={<><TbMathSymbols  className="mr-3 text-2xl" />Discrete Maths</>} 
            href="https://drive.google.com/drive/u/3/folders/1-LvS4qFvSlE-LwatfiF_iD18u4eOkDqa"/>
         <Button 
          target="_blank"
-          text={<><FaDatabase className="mr-3 text-2xl" />AI</>} 
+          text={<><FaBrain  className="mr-3 text-2xl" />AI</>} 
            href="https://drive.google.com/drive/u/3/folders/11UcTnBlrzbUKw3FZu0FT4PnXFwxxzkgG"/>
         <Button 
          target="_blank"
-          text={<><FaDatabase className="mr-3 text-2xl" />UHVC</>} 
+          text={<><FaPeopleRoof  className="mr-3 text-2xl" />UHVC</>} 
            href="https://drive.google.com/drive/u/3/folders/1bpTpEPc9lThCCN1gkfeEAtmg_irq8nTa"/>
       </div>
 
