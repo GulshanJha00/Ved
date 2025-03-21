@@ -44,6 +44,18 @@ const Page = () => {
           text={<><FaDatabase className="mr-3 text-2xl" />DBMS</>} 
            href="https://drive.google.com/drive/folders/1UwIEXIEvofZVAmnMqpy2t9G5ATI6_kGs?usp=sharing" 
         />
+        <Button 
+         target="_blank"
+          text={<><FaDatabase className="mr-3 text-2xl" />Discrete Maths</>} 
+           href="https://drive.google.com/drive/u/3/folders/1-LvS4qFvSlE-LwatfiF_iD18u4eOkDqa"/>
+        <Button 
+         target="_blank"
+          text={<><FaDatabase className="mr-3 text-2xl" />AI</>} 
+           href="https://drive.google.com/drive/u/3/folders/11UcTnBlrzbUKw3FZu0FT4PnXFwxxzkgG"/>
+        <Button 
+         target="_blank"
+          text={<><FaDatabase className="mr-3 text-2xl" />UHVC</>} 
+           href="https://drive.google.com/drive/u/3/folders/1bpTpEPc9lThCCN1gkfeEAtmg_irq8nTa"/>
       </div>
 
       {/* FlexBoxAds Section */}
