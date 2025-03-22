@@ -4,6 +4,7 @@ import Button from "@/components/Button";
 import { FaCode, FaJava, FaDna, FaProjectDiagram, FaDatabase,FaBrain   } from "react-icons/fa";
 import {TbMathSymbols} from "react-icons/tb"
 import {FaPeopleRoof } from "react-icons/fa6"
+import {GiMicrochip } from "react-icons/gi"
 import FlexBoxAds from "@/components/flexbox/FlexBoxAds";
 
 const Page = () => {
@@ -58,6 +59,10 @@ const Page = () => {
          target="_blank"
           text={<><FaPeopleRoof  className="mr-3 text-2xl" />UHVC</>} 
            href="https://drive.google.com/drive/u/3/folders/1bpTpEPc9lThCCN1gkfeEAtmg_irq8nTa"/>
+        <Button 
+         target="_blank"
+          text={<><GiMicrochip className="mr-3 text-2xl" />Microcontrollers</>} 
+           href="https://drive.google.com/drive/u/3/folders/1vZ4O8guhq2Lr0oBSriUv2PnaOb7zTxYT"/>
       </div>
 
       {/* FlexBoxAds Section */}
