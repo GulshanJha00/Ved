@@ -49,6 +49,12 @@ const Page = () => {
           text={<><FaLaptopCode className="mr-3 text-2xl" />Python</>} 
           href="https://drive.google.com/drive/folders/1rwu3e3GeC67XUWpyTbUUzR1DEGeD-SnG?usp=sharing" 
         />
+        <Button 
+         target="_blank"
+
+          text={<><FaLaptopCode className="mr-3 text-2xl" />Mechanical</>} 
+          href="https://drive.google.com/drive/folders/1QgC1PZcyLGhjGK8fOByv2twD0r9CmTds?usp=sharing" 
+        />
       </div>
       <FlexBoxAds/>
     </div>

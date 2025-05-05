@@ -98,8 +98,8 @@ const Page = () => {
         <div className="text-4xl col-span-3 testClass min-h-screen max-md:hidden">
           {/* Charging Station */}
           <div className="absolute z-0">
-            <Image src={Station} alt="Charging Station" width={160} height={160} className="chargers-1 inline-block relative xl:top-[35rem]  lg:top-[36rem] top-[35rem]"/>
-            <Image src={Station} alt="Charging Station" width={160} height={160} className="chargers-2 inline-block relative xl:top-[35rem]  lg:top-[36rem] top-[35rem]"/>
+            <Image src={Station} alt="Charging Station" width={160} height={160} className="chargers-1 inline-block relative 2xl:top-[40rem] xl:top-[39rem]  lg:top-[36rem] top-[35rem]"/>
+            <Image src={Station} alt="Charging Station" width={160} height={160} className="chargers-2 inline-block relative 2xl:top-[40rem] xl:top-[39rem]  lg:top-[36rem] top-[32rem]"/>
           </div>
 
           {/* Robot Image with User-defined CSS */}
