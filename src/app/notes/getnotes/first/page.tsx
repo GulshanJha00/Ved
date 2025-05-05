@@ -3,6 +3,7 @@ import React from "react";
 import Button from "@/components/Button";
 import { FaCogs, FaAtom, FaPlug, FaCalculator, FaLaptopCode } from "react-icons/fa";
 import FlexBoxAds from "@/components/flexbox/FlexBoxAds";
+import { GiMechanicalArm } from "react-icons/gi";
 
 const Page = () => {
   return (
@@ -52,7 +53,7 @@ const Page = () => {
         <Button 
          target="_blank"
 
-          text={<><FaLaptopCode className="mr-3 text-2xl" />Mechanical</>} 
+          text={<><GiMechanicalArm className="mr-3 text-2xl"  /> Mechanical</>} 
           href="https://drive.google.com/drive/folders/1QgC1PZcyLGhjGK8fOByv2twD0r9CmTds?usp=sharing" 
         />
       </div>
