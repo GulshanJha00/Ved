@@ -24,7 +24,7 @@ const devChallenges = [
   { 
     title: "Clone Figma Design", 
     icon: FaPaintBrush, 
-    link: "/practice/dev/figma-clone",
+    link: "https://clonechamp.vercel.app/",
     p: "Recreate Figma designs to sharpen your frontend skills."
   },
   { 

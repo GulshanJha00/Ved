@@ -29,7 +29,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({
       </div>
       <h2 className={styles.name}>{name}</h2>
       <p className={styles.title}>{title}</p>
-      <p className={styles.title}>ISE-A 4th Sem</p>
+      <p className={styles.title}>ISE-A 5th Sem</p>
       <p className={styles.quote}>&quot;{quote}&quot;</p> 
       
       <div className={styles.socialMedia}>
