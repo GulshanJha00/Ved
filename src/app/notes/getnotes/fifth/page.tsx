@@ -27,31 +27,31 @@ const Page = () => {
          target="_blank"
 
             text={<><FaCloud className="mr-3 text-2xl" />Cloud Computing</>} 
-            href="/" 
+            href="https://drive.google.com/drive/u/5/folders/1OoozU9cg4x6kEWYasJwB1AY_0iGBEOiH" 
           />
           <Button
          target="_blank"
 
             text={<><FaNetworkWired className="mr-3 text-2xl" />Computer Networks</>} 
-            href="/" 
+            href="https://drive.google.com/drive/u/5/folders/1jSsZlyb5c6UdY-ucVLhtbUUGkyvjlJaQ" 
           />
           <Button 
          target="_blank"
 
-            text={<><FaListAlt className="mr-3 text-2xl" />Elective</>} 
-            href="/" 
+            text={<><FaListAlt className="mr-3 text-2xl" />AI</>} 
+            href="https://drive.google.com/drive/u/5/folders/1wYA09Qf7uUtY3SdzlJVcemV1aohkvuLo" 
           />
           <Button 
          target="_blank"
 
             text={<><FaProjectDiagram className="mr-3 text-2xl" />SEPM</>} 
-            href="/" 
+            href="https://drive.google.com/drive/u/5/folders/1a9273KVyuYBaX_2ei6cvjM6-CzbHqT1p" 
           />
           <Button 
          target="_blank"
 
             text={<><FaBrain className="mr-3 text-2xl" />Theory Of Computation</>} 
-            href="/" 
+            href="https://drive.google.com/drive/u/5/folders/1_GxB3K0I1SKrmhGkBzv9-OFbe-u6ppMD" 
           />
         </div>
 

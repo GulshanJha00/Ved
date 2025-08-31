@@ -24,6 +24,7 @@ export async function POST(req: NextRequest) {
 
     // Sending email
     await transporter.sendMail(mailOptions);
+    
 
     return NextResponse.json({ message: 'Email sent successfully!' });
   } catch (error) {

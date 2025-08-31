@@ -119,10 +119,22 @@ const Page = () => {
             Enhance your skills with our comprehensive practice platform. From
             coding challenges to interview prep, we&apos;ve got you covered.
           </p>
-          <button className="practice-p bg-[#1A1600] px-4 py-2 flex justify-center items-center gap-1 text-white mt-3 rounded-lg">
-            <h1 className="font-bold font-sans">Start Practicing </h1>
+          <div className="gap-5 flex">
+             <Link href={"/practice/interview"} className="practice-p bg-[#1A1600] px-4 py-2 flex justify-center items-center gap-1 text-white mt-3 rounded-lg">
+            
+            <h1 className="font-bold font-sans">Interview Preparation </h1>
             <FaArrowRight />
-          </button>
+            </Link>
+
+             <Link href={"/flexbox-game"} className="practice-p bg-[#1A1600] px-4 py-2 flex justify-center items-center gap-1 text-white mt-3 rounded-lg">
+            
+            <h1 className="font-bold font-sans">Learn FlexBox </h1>
+            <FaArrowRight />
+            </Link>
+
+          </div>
+
+           
         </div>
         <div className="absolute bottom-[-10px] left-1/2 -translate-x-16">
           <FaArrowDown className="practice-emoji bg-cyan-400 rounded-full text-8xl" />
