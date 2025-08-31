@@ -16,7 +16,7 @@ const Page = () => {
           <h1 className="text-5xl font-extrabold text-white leading-tight mb-4">
             Course Materials
           </h1>
-          <p className="text-xl font-bold text-yellow-500 opacity-80 mt-4 max-w-xl mx-auto">
+          <p className="text-xl font-bold text-yellow-400 opacity-80 mt-4 max-w-xl mx-auto">
             Notes uploaded here are from seniors. This year’s notes will be added soon
           </p>
         </div>
