@@ -16,8 +16,8 @@ const Page = () => {
           <h1 className="text-5xl font-extrabold text-white leading-tight mb-4">
             Course Materials
           </h1>
-          <p className="text-xl text-white opacity-80 mt-4 max-w-xl mx-auto">
-            Click on the subject buttons to access the course materials and dive into your learning journey.
+          <p className="text-xl font-bold text-yellow-500 opacity-80 mt-4 max-w-xl mx-auto">
+            Notes uploaded here are from seniors. This year’s notes will be added soon
           </p>
         </div>
 
@@ -50,7 +50,7 @@ const Page = () => {
           <Button 
          target="_blank"
 
-            text={<><FaBrain className="mr-3 text-2xl" />Theory Of Computation</>} 
+            text={<><FaBrain className="mr-3 text-2xl" />ToC</>} 
             href="https://drive.google.com/drive/u/5/folders/1_GxB3K0I1SKrmhGkBzv9-OFbe-u6ppMD" 
           />
         </div>
