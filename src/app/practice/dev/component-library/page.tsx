@@ -35,7 +35,7 @@ const ComponentLibraryPage = () => {
           {/* Welcome Section */}
           <section className="my-10 md:my-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 font-serif">
-              Welcome to NIE Ved's Component Library
+              Welcome to NIE Ved&apos;s Component Library
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">
               Explore a curated collection of ready-to-use Tailwind CSS components. Copy, paste, and customize to build beautiful and responsive web interfaces instantly.
