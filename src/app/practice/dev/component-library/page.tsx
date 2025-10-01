@@ -52,15 +52,15 @@ const livePreviewButtons = [
 
 const ComponentLibraryPage = () => {
   return (
-    <div className="h-max w-screen bg-[#e7f7db] flex flex-col md:flex-row">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="h-max w-screen bg-[#e7f7db]">
+      <div className="w-full flex h-screen">
+        <Sidebar />
 
       {/* Main Content */}
       <div className="flex-1 overflow-auto min-h-screen p-4 md:p-8">
         {/* Header */}
-        <div className="mb-8 md:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 font-serif">
+        <div className="my-10 md:my-12">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 font-serif">
             Component Library
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-700">
@@ -137,6 +137,7 @@ const ComponentLibraryPage = () => {
           </div>
         </section>
       </div>
+    </div>
     </div>
   );
 };
