@@ -16,7 +16,7 @@ const Introduction = () => {
   ];
 
   return (
-    <div className="h-max w-screen bg-[#f0f4f8]">
+    <div className="h-max w-screen bg-[#e7f7db]">
       <div className="flex h-screen w-full">
         <Sidebar />
 

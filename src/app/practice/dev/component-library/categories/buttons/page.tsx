@@ -372,7 +372,7 @@ const ButtonsPage = () => {
     <div className="h-max w-screen bg-[#e7f7db]">
       <div className="w-full flex h-screen">
         <Sidebar />
-        <div className="p-4 mt-10 md:p-8 w-full min-h-screen bg-[#f3f4f6] overflow-auto">
+        <div className="p-4 mt-10 md:p-8 w-full min-h-screen bg-[#e7f7db] overflow-auto">
           <h3 className="text-2xl font-semibold mb-4 relative inline-block after:content-[''] after:block after:w-16 after:h-1 after:bg-blue-500 after:rounded mt-1">
             Buttons
           </h3>

@@ -242,7 +242,7 @@ const BadgesPage = () => {
     <div className="h-max w-screen bg-[#e7f7db]">
       <div className="w-full flex h-screen">
         <Sidebar />
-        <div className="p-4 mt-10 md:p-8 w-full bg-[#f3f4f6] overflow-auto">
+        <div className="p-4 mt-10 md:p-8 w-full bg-[#e7f7db] overflow-auto">
           <h2 className="text-3xl font-bold mb-6 relative inline-block after:content-[''] after:block after:w-20 after:h-1 after:bg-blue-500 after:rounded mt-1">
             Badges Library
           </h2>
