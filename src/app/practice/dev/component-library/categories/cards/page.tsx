@@ -109,7 +109,7 @@ const cards: Card[] = [
 </div>`,
     element: (
       <div className="p-6 bg-white rounded-lg shadow-md">
-        <p className="text-gray-700 mb-2">"Amazing product!"</p>
+        <p className="text-gray-700 mb-2">Amazing product!</p>
         <p className="text-sm text-gray-500">- John Doe</p>
       </div>
     ),
