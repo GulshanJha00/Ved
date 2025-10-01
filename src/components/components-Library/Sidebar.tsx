@@ -9,6 +9,7 @@ const Sidebar = () => {
         <Link href={"/practice/dev/component-library/introduction"}><li>Introduction</li></Link>
         <Link href={"/practice/dev/component-library/categories/alerts"}><li>Alerts</li></Link>
         <Link href={"/practice/dev/component-library/categories/buttons"}><li>Buttons</li></Link>
+         <Link href={"/practice/dev/component-library/categories/badges"}><li>Badges</li></Link>
         <Link href={"/practice/dev/component-library/categories/cards"}><li>Cards</li></Link>
       </ul>
     </div>

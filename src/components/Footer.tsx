@@ -1,4 +1,4 @@
-import { FaGlobe, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaGlobe, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -7,29 +7,21 @@ const Footer = () => {
         {/* Logo / Brand */}
         <div className="mb-4 md:mb-0">
           <h1 className="text-2xl font-bold tracking-wide">NIEVed</h1>
-          <p className="text-sm text-gray-400 mt-1">Empowering the next generation of engineers</p>
+          <p className="text-sm text-gray-400 mt-1">Heart Of NIE Students</p>
         </div>
 
-        {/* Social Links */}
         <div className="flex space-x-6">
           <a
-            href="https://nieved.vercel.app"
+            href="https://gulshankumar.xyz"
             target="_blank"
             className="text-xl text-gray-300 hover:text-white transition transform hover:scale-110"
             aria-label="Website"
           >
             <FaGlobe />
           </a>
+          
           <a
-            href="https://twitter.com"
-            target="_blank"
-            className="text-xl text-gray-300 hover:text-white transition transform hover:scale-110"
-            aria-label="Twitter"
-          >
-            <FaTwitter />
-          </a>
-          <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/gulshankumar0/"
             target="_blank"
             className="text-xl text-gray-300 hover:text-white transition transform hover:scale-110"
             aria-label="LinkedIn"
@@ -37,7 +29,7 @@ const Footer = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/GulshanJha00/ved"
             target="_blank"
             className="text-xl text-gray-300 hover:text-white transition transform hover:scale-110"
             aria-label="GitHub"
