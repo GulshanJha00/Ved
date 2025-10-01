@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
+
 
 const questions = [
   {
@@ -13,7 +15,7 @@ const questions = [
       { name: "Container With Most Water", link: "https://leetcode.com/problems/container-with-most-water/", diff: "Medium" },
       { name: "Product of Array Except Self", link: "https://leetcode.com/problems/product-of-array-except-self/", diff: "Medium" },
       { name: "Longest Substring Without Repeating Characters", link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/", diff: "Medium" },
-      { name: "Valid Palindrome", link: "https://leetcode.com/problems/valid-palindrome/", diff: "Easy" },
+      { name: "Valid Palindrome", link: "https://leetcode.com/problems/valid-palindrome/", diff: "Medium" },
       { name: "Sliding Window Maximum", link: "https://leetcode.com/problems/sliding-window-maximum/", diff: "Hard" },
     ],
   },
@@ -165,59 +167,146 @@ const questions = [
     ],
   },
 ];
+const difficultyOrder: Record<string, number> = { Easy: 1, Medium: 2, Hard: 3 };
 
+const Page: React.FC = () => {
+  const [search, setSearch] = useState<string>("");
+  const [solved, setSolved] = useState<Record<string, boolean>>({});
+  const [sortBy, setSortBy] = useState<"default" | "difficulty" | "alphabetical">("default");
 
-const Page = () => {
+  // Load solved state from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem("solvedQuestions");
+    if (saved) setSolved(JSON.parse(saved));
+  }, []);
+
+  // Save solved state to localStorage
+  useEffect(() => {
+    localStorage.setItem("solvedQuestions", JSON.stringify(solved));
+  }, [solved]);
+
+  const toggleSolved = (topic: string, index: number) => {
+    const key = `${topic}-${index}`;
+    setSolved((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const filteredQuestions = questions.map((section) => {
+    const list = section.list.filter((q) =>
+      q.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+    if (sortBy === "difficulty") {
+      list.sort((a, b) => difficultyOrder[a.diff] - difficultyOrder[b.diff]);
+    } else if (sortBy === "alphabetical") {
+      list.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    return { ...section, list };
+  });
+
+  const totalQuestions = questions.reduce((acc, s) => acc + s.list.length, 0);
+  const totalSolved = Object.values(solved).filter(Boolean).length;
+  const progress = Math.round((totalSolved / totalQuestions) * 100);
+
   return (
-  <div className="bg-black text-white min-h-screen p-4 sm:p-6">
-    <h1 className="text-2xl mt-10 sm:text-3xl text-blue-400 font-bold mb-6 text-center">
-      Top 107 LeetCode Questions
-    </h1>
+    <div className="bg-black text-white min-h-screen p-4 sm:p-6">
+      <h1 className="text-2xl mt-10 sm:text-3xl text-blue-400 font-bold mb-6 text-center">
+        Top 107 LeetCode Questions
+      </h1>
 
-    {questions.map((section, idx) => (
-      <div key={idx} className="mb-8 sm:mb-10">
-        <h2 className="text-xl sm:text-2xl text-blue-300 mb-3 sm:mb-4">
-          {section.topic}
-        </h2>
-
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[500px] border border-gray-700">
-            <thead>
-              <tr className="bg-gray-900">
-                <th className="p-2 text-left text-sm sm:text-base">#</th>
-                <th className="p-2 text-left text-sm sm:text-base">Question</th>
-                <th className="p-2 text-left text-sm sm:text-base">Difficulty</th>
-              </tr>
-            </thead>
-            <tbody>
-              {section.list.map((q, i) => (
-                <tr
-                  key={i}
-                  className="border-t border-gray-800 hover:bg-gray-800"
-                >
-                  <td className="p-2 text-sm sm:text-base">{i + 1}</td>
-                  <td className="p-2 text-sm sm:text-base">
-                    <a
-                      href={q.link}
-                      target="_blank"
-                      className=" cursor-pointer text-red-400 hover:underline"
-                    >
-                      {q.name}
-                    </a>
-                  </td>
-                  <td className="p-2 text-gray-400 text-sm sm:text-base">
-                    {q.diff}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      {/* Progress Bar */}
+      <div className="mb-6">
+        <div className="bg-gray-700 rounded-full h-4 w-full">
+          <div
+            className="bg-green-500 h-4 rounded-full transition-all"
+            style={{ width: `${progress}%` }}
+          />
         </div>
+        <p className="text-sm mt-1 text-center">{progress}% Completed</p>
       </div>
-    ))}
-  </div>
-);
 
+      {/* Search and Sorting */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+        <div className="relative flex-1">
+          <input
+            type="text"
+            placeholder="Search questions..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full p-3 pl-10 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-blue-400 placeholder-gray-500 text-white"
+          />
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+            <FaSearch/>
+          </span>
+        </div>
+
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value as "default" | "difficulty" | "alphabetical")}
+          className="p-2 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:border-blue-400"
+        >
+          <option value="default">Default Order</option>
+          <option value="difficulty">Sort by Difficulty</option>
+          <option value="alphabetical">Sort Alphabetically</option>
+        </select>
+      </div>
+
+      {filteredQuestions.map((section, idx) => (
+        <div key={idx} className="mb-8 sm:mb-10">
+          <h2 className="text-xl sm:text-2xl text-blue-300 mb-3 sm:mb-4">
+            {section.topic}
+          </h2>
+
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[500px] border border-gray-700">
+              <thead>
+                <tr className="bg-gray-900">
+                  <th className="p-2 text-left text-sm sm:text-base">#</th>
+                  <th className="p-2 text-left text-sm sm:text-base">Question</th>
+                  <th className="p-2 text-left text-sm sm:text-base">Difficulty</th>
+                  <th className="p-2 text-left text-sm sm:text-base">Solved</th>
+                </tr>
+              </thead>
+              <tbody>
+                {section.list.map((q, i) => {
+                  const key = `${section.topic}-${i}`;
+                  return (
+                    <tr
+                      key={i}
+                      className={`border-t border-gray-800 hover:bg-gray-800 ${
+                        solved[key] ? "bg-green-900/30" : ""
+                      }`}
+                    >
+                      <td className="p-2 text-sm sm:text-base">{i + 1}</td>
+                      <td className="p-2 text-sm sm:text-base">
+                        <a
+                          href={q.link}
+                          target="_blank"
+                          className="cursor-pointer text-red-400 hover:underline"
+                        >
+                          {q.name}
+                        </a>
+                      </td>
+                      <td className="p-2 text-gray-400 text-sm sm:text-base">
+                        {q.diff}
+                      </td>
+                      <td className="p-2 text-sm sm:text-base">
+                        <input
+                          type="checkbox"
+                          checked={!!solved[key]}
+                          onChange={() => toggleSolved(section.topic, i)}
+                        />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Page;

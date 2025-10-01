@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCubes, FaThLarge, FaCode, FaComments, FaPaintBrush } from "react-icons/fa";
+import { FaCubes, FaThLarge, FaCode, FaPaintBrush } from "react-icons/fa";
 import Link from "next/link";
 
 const devChallenges = [
@@ -24,15 +24,9 @@ const devChallenges = [
   { 
     title: "Clone Figma Design", 
     icon: FaPaintBrush, 
-    link: "/practice/dev/figma-clone",
+    link: "https://clonechamp.vercel.app/",
     p: "Recreate Figma designs to sharpen your frontend skills."
-  },
-  { 
-    title: "ChatRoom", 
-    icon: FaComments, 
-    link: "/practice/dev/chatroom",
-    p: "Join discussions, collaborate, and solve coding challenges together."
-  },
+  }
 ];
 
 const Page = () => {
