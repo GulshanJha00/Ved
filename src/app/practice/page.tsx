@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "./practice.css";
-import { FaArrowDown, FaArrowRight, FaBook, FaCode, FaLaptopCode, FaDatabase, FaRobot, FaCubes, FaThLarge, FaPaintBrush, FaComments } from "react-icons/fa";
+import { FaArrowDown, FaArrowRight, FaBook, FaCode, FaLaptopCode, FaDatabase, FaRobot } from "react-icons/fa";
 import PracticeSectionCards from "@/components/practice/PracticeSectionCards";
 import Link from "next/link";
 const Page = () => {
@@ -48,126 +48,97 @@ const Page = () => {
 
     }
   ];
-  const devChallenges = [
-    { 
-      title: "Flexbox Battle", 
-      icon: FaCubes, 
-      link: "/flexbox-game",
-      p: "Master CSS Flexbox with interactive coding challenges."
-    },
-    { 
-      title: "Grid Challenge", 
-      icon: FaThLarge, 
-      link: "/practice/dev/grid",
-      p: "Learn CSS Grid with structured hands-on challenges."
-    },
-    { 
-      title: "Component Library", 
-      icon: FaCode, 
-      link: "/practice/dev/component-library",
-      p: "Browse and build reusable UI components with Tailwind and React."
-    },
-    { 
-      title: "Clone Figma Design", 
-      icon: FaPaintBrush, 
-      link: "/practice/dev/figma-clone",
-      p: "Recreate Figma designs to sharpen your frontend skills."
-    },
-    { 
-      title: "ChatRoom", 
-      icon: FaComments, 
-      link: "/practice/dev/chatroom",
-      p: "Join discussions, collaborate, and solve coding challenges together."
-    },
-  ];
+
   
   return (
     <>
-      <div className="lg:hidden min-h-screen bg-gradient-to-r from-purple-600 to-blue-600 flex flex-col justify-center items-center text-center px-6">
-        <h1 className="text-4xl font-extrabold text-white mb-4">
-          Desktop Only Platform 🚀
-        </h1>
-        <p className="text-lg text-white opacity-80 mb-8 max-w-xl">
-          This platform is designed for laptops and desktops only. Please switch
-          to a larger device to access it.
-        </p>
-      </div>
-      <nav className="fixed hidden lg:block top-0 left-0 w-full bg-black text-white shadow-md z-50">
-        <div className="flex justify-between items-center py-4 px-8">
-          <h1 className="text-xl font-bold">Development Space</h1>
-          <ul className="flex gap-6">
-            {devChallenges.map((item, index) => (
-              <li key={index}>
-                <Link href={item.link} className="flex items-center gap-2 hover:text-yellow-400 transition-colors">
-                  <item.icon className="text-lg" />
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-
-      <div className="hidden relative lg:flex min-h-screen bg-[#ffdd00] flex-col w-screen justify-center h-screen px-16 space-y-12">
-        {/* Title Section */}
-        <div className=" w-full max-w-4xl ">
-          <h1 className="practice-header text-7xl font-extrabold font-serif text-black tracking-tight ">
-            Master coding through practice and challenges
+  <div className="relative flex min-h-screen bg-[#ffdd00] flex-col w-screen justify-center h-screen px-4 sm:px-8 md:px-16 space-y-8 sm:space-y-10">
+    {/* Title Section */}
+    <div className="w-full max-w-4xl">
+      <h1 className="practice-header text-4xl sm:text-5xl md:text-7xl font-extrabold font-serif text-black tracking-tight">
+        Master coding through practice and challenges
+      </h1>
+      <p className="practice-p text-base sm:text-lg md:text-xl font-sans text-gray-500 mt-4 max-w-xl">
+        Enhance your skills with our comprehensive practice platform. From
+        coding challenges to interview prep, we&apos;ve got you covered.
+      </p>
+      <div className="gap-4 sm:gap-5 flex flex-col sm:flex-row mt-3">
+        <Link
+          href={"/practice/interview"}
+          className="practice-p bg-[#1A1600] px-3 sm:px-4 py-2 flex justify-center items-center gap-1 text-white rounded-lg"
+        >
+          <h1 className="font-bold font-sans text-sm sm:text-base md:text-lg">
+            Interview Preparation
           </h1>
-          <p className="practice-p text-xl font-sans text-gray-500 mt-4 max-w-xl ">
-            Enhance your skills with our comprehensive practice platform. From
-            coding challenges to interview prep, we&apos;ve got you covered.
-          </p>
-          <div className="gap-5 flex">
-             <Link href={"/practice/interview"} className="practice-p bg-[#1A1600] px-4 py-2 flex justify-center items-center gap-1 text-white mt-3 rounded-lg">
-            
-            <h1 className="font-bold font-sans">Interview Preparation </h1>
-            <FaArrowRight />
-            </Link>
+          <FaArrowRight className="text-sm sm:text-base md:text-lg" />
+        </Link>
 
-             <Link href={"/flexbox-game"} className="practice-p bg-[#1A1600] px-4 py-2 flex justify-center items-center gap-1 text-white mt-3 rounded-lg">
-            
-            <h1 className="font-bold font-sans">Learn FlexBox </h1>
-            <FaArrowRight />
-            </Link>
-
-          </div>
-
-           
-        </div>
-        <div className="absolute bottom-[-10px] left-1/2 -translate-x-16">
-          <FaArrowDown className="practice-emoji bg-cyan-400 rounded-full text-8xl" />
-        </div>
+        <Link
+          href={"/flexbox-game"}
+          className="practice-p bg-[#1A1600] px-3 sm:px-4 py-2 flex justify-center items-center gap-1 text-white rounded-lg"
+        >
+          <h1 className="font-bold font-sans text-sm sm:text-base md:text-lg">
+            Learn FlexBox
+          </h1>
+          <FaArrowRight className="text-sm sm:text-base md:text-lg" />
+        </Link>
       </div>
+    </div>
+    <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+  <FaArrowDown className="practice-emoji bg-cyan-400 rounded-full text-6xl sm:text-7xl md:text-8xl animate-bounceArrow" />
+</div>
 
-      <div className="hidden practice-Hero min-h-screen bg-[#FFFCE6] lg:flex flex-col items-center pt-20">
-        <h1 className="practice-Hero-head text-6xl mb-4 font-extrabold font-serif">
-          Practice Spaces
-        </h1>
-        <p className="practice-Hero-p text-xl text-gray-500 mb-4">
-          Choose from our various practice spaces to enhance your skills in
-          different areas.
-        </p>
+  </div>
 
-        <div className="practice-Hero-container grid lg:grid-cols-3 grid-cols-1 gap-8 h-full">
+<div className="lg:hidden min-h-screen bg-[#FFFCE6] flex flex-col items-center pt-8 sm:pt-12 px-3 sm:px-4">
+  <h1 className="text-2xl sm:text-3xl font-extrabold font-serif mb-3">
+    Practice Spaces
+  </h1>
+  <p className="text-sm sm:text-base text-gray-500 mb-3 text-center">
+    Choose from our various practice spaces to enhance your skills in
+    different areas.
+  </p>
 
-          {
-            json.map((element) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full">
+    {json.map((element) => (
+      <PracticeSectionCards
+        key={element.title1}
+        tag={element.tag1}
+        title={element.title1}
+        pTag={element.pTag1}
+        p2Tag={element.p2Tag1}
+        link={element.link}
+      />
+    ))}
+  </div>
+</div>
 
-              <PracticeSectionCards
-              key={element.title1}
-                tag={element.tag1}
-                title={element.title1}
-                pTag={element.pTag1}
-                p2Tag={element.p2Tag1}
-                link={element.link}
-              />
-            ))
-          }
-        </div>
-      </div>
-    </>
+
+
+  <div className="hidden practice-Hero min-h-screen bg-[#FFFCE6] lg:flex flex-col items-center pt-12 sm:pt-16 lg:pt-20 px-4 sm:px-6 lg:px-16">
+    <h1 className="practice-Hero-head text-3xl sm:text-4xl lg:text-6xl mb-4 font-extrabold font-serif">
+      Practice Spaces
+    </h1>
+    <p className="practice-Hero-p text-base sm:text-lg lg:text-xl text-gray-500 mb-4 text-center lg:text-left">
+      Choose from our various practice spaces to enhance your skills in
+      different areas.
+    </p>
+
+    <div className="practice-Hero-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 h-full">
+      {json.map((element) => (
+        <PracticeSectionCards
+          key={element.title1}
+          tag={element.tag1}
+          title={element.title1}
+          pTag={element.pTag1}
+          p2Tag={element.p2Tag1}
+          link={element.link}
+        />
+      ))}
+    </div>
+  </div>
+</>
+
   );
 };
 
