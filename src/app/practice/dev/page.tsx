@@ -50,7 +50,7 @@ const Page = () => {
       </nav>
 
       {/* Main Content */}
-      <div className="hidden lg:flex min-h-screen bg-[#ffdd00] flex-col w-screen py-20 px-16 ">
+      <div className="flex min-h-screen bg-[#ffdd00] flex-col w-screen py-20 px-16 ">
         {/* Title Section */}
         <div className="w-full max-w-4xl mb-12 h-full">
           <h1 className="text-3xl font-extrabold font-serif text-black tracking-tight">
