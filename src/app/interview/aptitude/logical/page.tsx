@@ -44,13 +44,7 @@ type Question = {
     company: string;
 };
 
-export const metadata = {
-  title: "Aptitude Topics | Practice Questions",
-  description: "Practice aptitude questions across various topics like Arithmetic, Coding & Decoding, Blood Relations, Logical Reasoning, and more. Prepare for placements and company interviews.",
-  keywords: "Aptitude, Reasoning, Coding, Decoding, Logical Puzzles, Placement Preparation, Interview Questions, Arithmetic, Blood Relations,nieved, nie ved",
-  authors: [{ name: "Gulshan" }],
-  viewport: "width=device-width, initial-scale=1.0",
-};
+
 
 const AptitudeTopicsPage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -101,7 +95,7 @@ const AptitudeTopicsPage = () => {
     return (
         <div className="flex h-screen bg-gray-900 text-white">
 
-            <div className={`bg-gray-800 w-64 p-6 space-y-0 sticky top-0 transform 
+            <div className={`bg-gray-800 hidden md:flex w-64 p-6 space-y-0 sticky top-0 transform 
     ${isOpen ? "translate-x-0" : "-translate-x-full"} 
     h-screen transition-transform duration-300 ease-in-out md:translate-x-0 md:relative md:h-screen z-0`}>
 
@@ -124,7 +118,7 @@ const AptitudeTopicsPage = () => {
 
 
             {/* Mobile Menu Button */}
-            <button className="absolute top-4 left-4 md:hidden z-30" onClick={() => setIsOpen(true)}>
+            <button className="absolute top-24 left-4 md:hidden z-30" onClick={() => setIsOpen(true)}>
                 <FaBars size={24} />
             </button>
 
