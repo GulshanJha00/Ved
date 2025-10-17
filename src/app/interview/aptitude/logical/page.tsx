@@ -17,6 +17,7 @@ import directionSenseQuestions from "./DirectionSense"
 import logicalPuzzlesQuestions from "./logicalpuzzle"
 import oddOneOutQuestions from "./odd-one-out"
 import statementAssumptionQuestions from "./Miscellaneous"
+import { IoMdClose } from "react-icons/io";
 const topics = [
     "Alphanumeric Series",
     "Analogy / Reasoning Analogy",
@@ -116,11 +117,38 @@ const AptitudeTopicsPage = () => {
                 </ul>
             </div>
 
+            {isOpen ?
+                <div className={`bg-gray-800 w-64 p-6 space-y-0 absolute top-24 transform 
+    ${isOpen ? "translate-x-0" : "-translate-x-full"} 
+    h-screen transition-transform duration-300 ease-in-out md:translate-x-0 md:relative md:h-screen z-30`}>
+                    <button className="absolute top-0 right-4 md:hidden z-30" onClick={() => setIsOpen(false)}>
+                        <IoMdClose size={20} />
+                    </button>
 
-            {/* Mobile Menu Button */}
-            <button className="absolute top-24 left-4 md:hidden z-30" onClick={() => setIsOpen(true)}>
-                <FaBars size={24} />
-            </button>
+                    <h1 className="text-2xl font-bold mb-6">Topics</h1>
+                    <ul className="overflow-y-auto" style={{ maxHeight: 'calc(100vh - 6rem)' }}>
+                        {topics.map((topic, index) => (
+                            <li
+                                key={index}
+                                className={`cursor-pointer px-2 py-1 rounded ${activeTopic === topic ? "bg-purple-600 text-white" : "hover:text-gray-300"}`}
+                                onClick={() => {
+                                    setActiveTopic(topic);
+                                    setSelectedAnswers({});
+                                }}
+                            >
+                                {topic}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                :
+
+                <button className="absolute top-24 left-4 md:hidden z-30" onClick={() => setIsOpen(true)}>
+                    <FaBars size={20} />
+                </button>
+
+            }
+
 
             {/* Main Content */}
             <div className="p-6 ml-0 md:ml-20 overflow-y-auto w-full h-screen">
