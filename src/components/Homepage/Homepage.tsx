@@ -20,7 +20,10 @@ import {
   FaPaintBrush,
   FaThLarge,
   FaCogs,
+  FaCodeBranch,
+  FaRegSmileWink,
 } from "react-icons/fa";
+import { GiNotebook } from "react-icons/gi";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("College");
@@ -36,9 +39,9 @@ const Page = () => {
   const InterviewCard = [
     {
       title: "Logical Reasoning",
-      topics: "13+ Topics",
-      problems: "840+ Problems",
-      href:"/interview/aptitude/logical",
+      topics: "20 Topics",
+      problems: "600+ Problems",
+      href: "/interview/aptitude/logical",
       gradient: "from-purple-500 to-pink-500",
       icon: FaBrain,
     },
@@ -46,14 +49,14 @@ const Page = () => {
       title: "Quantitative Aptitude",
       topics: "25+ Topics",
       problems: "1500+ Problems",
-      href:"/interview/aptitude/quantitative",
+      href: "/interview/aptitude/quantitative",
       gradient: "from-blue-500 to-cyan-500",
       icon: FaCalculator,
     },
     {
       title: "Verbal Ability",
       topics: "8+ Topics",
-      href:"/interview/aptitude/verbal",
+      href: "/interview/aptitude/verbal",
       problems: "480+ Problems",
       gradient: "from-green-500 to-emerald-500",
       icon: FaComments,
@@ -61,7 +64,7 @@ const Page = () => {
     {
       title: "Core Subjects",
       topics: "10+ Domains",
-      href:"/interview/core",
+      href: "/interview/core",
       problems: "600+ Problems",
       gradient: "from-orange-500 to-yellow-500",
       icon: FaCode,
@@ -104,7 +107,7 @@ const Page = () => {
       title: "Interview Prep",
       description: "Technical interview questions",
       gradient: "from-blue-500 to-indigo-500",
-      link: "/practice/interview",
+      link: "/interview",
     },
     {
       icon: FaDatabase,
@@ -143,21 +146,21 @@ const Page = () => {
       description: "Master Flexbox layouts and design",
       gradient: "from-green-500 to-emerald-500",
       icon: FaPaintBrush,
-      href: "/practice/flexbox",
+      href: "/practice/dev/flexbox-game",
     },
     {
       title: "CSS Grid",
       description: "Responsive grid layouts for projects",
       gradient: "from-orange-500 to-yellow-500",
       icon: FaThLarge,
-      href: "/practice/grid",
+      href: "/practice/dev/grid",
     },
     {
       title: "Component Libraries",
       description: "UI frameworks like Tailwind & ShadCN",
       gradient: "from-indigo-500 to-purple-500",
       icon: FaCogs,
-      href: "/practice/components",
+      href: "/practice/dev/component-library",
     },
     {
       title: "ML Resources",
@@ -168,22 +171,37 @@ const Page = () => {
     },
   ];
 
-  const interviewItems = [
+  const chatRooms = [
     {
-      title: "DSA 107 Days Sheet",
-      description: "Step-by-step guide to master DSA in 107 days",
+      title: "DSA ChatRoom",
+      description: "Collaborate and solve Data Structures & Algorithms problems with peers.",
       gradient: "from-purple-500 to-pink-500",
-      icon: FaDatabase,
-      href: "/practice/dsa-sheet",
+      icon: FaCode,
+      href: "/chatroom/dsa",
     },
     {
-      title: "Learn Coding",
-      description: "Practice coding problems to improve skills",
+      title: "Dev ChatRoom",
+      description: "Get help with coding issues, bugs, and development tips from fellow developers.",
       gradient: "from-blue-500 to-cyan-500",
-      icon: FaLaptopCode,
-      href: "/practice/coding",
+      icon: FaCodeBranch,
+      href: "/chatroom/dev",
+    },
+    {
+      title: "ML ChatRoom",
+      description: "Discuss Machine Learning concepts, projects, and problem-solving strategies.",
+      gradient: "from-purple-500 to-emerald-500",
+      icon: FaRobot,
+      href: "/chatroom/ml",
+    },
+    {
+      title: "Fun ChatRoom",
+      description: "Chat, share memes, and enjoy light-hearted conversations with friends.",
+      gradient: "from-pink-500 to-yellow-500",
+      icon: FaRegSmileWink,
+      href: "/chatroom/fun",
     },
   ];
+
 
 
   const collegeItems = [
@@ -191,29 +209,22 @@ const Page = () => {
       title: "College Notes",
       description: "Follow a structured DSA sheet to master algorithms",
       gradient: "from-purple-500 to-pink-500",
-      icon: FaDatabase,
+      icon: GiNotebook,
       href: "/notes",
     },
     {
       title: "DSA Practice Sheet",
       description: "Follow a structured DSA sheet to master algorithms",
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "from-blue-500 to-cyan-500",
       icon: FaDatabase,
       href: "practice/first/question",
     },
     {
-      title: "Web Development Projects",
-      description: "Build real projects to strengthen your web skills",
-      gradient: "from-blue-500 to-cyan-500",
-      icon: FaLaptopCode,
-      href: "/practice/webdev-projects",
-    },
-    {
-      title: "UI/UX Challenges",
-      description: "Improve your design and frontend skills",
+      title: "DSA 107 Days Sheet",
+      description: "Step-by-step guide to master DSA in 107 days",
       gradient: "from-green-500 to-emerald-500",
-      icon: FaPaintBrush,
-      href: "/practice/ui-challenges",
+      icon: FaDatabase,
+      href: "/practice/dsa",
     },
   ];
 
@@ -252,13 +263,13 @@ const Page = () => {
           <div className="flex-1">
             {/* Elegant Tab Navigation */}
             <div className="flex flex-wrap gap-3 mb-8 p-2 bg-white rounded-2xl shadow-sm">
-              {["College", "Interview", "resources", "interview"].map((tab) => (
+              {["College", "Interview", "resources", "Chatroom"].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`flex-1 min-w-[120px] px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${activeTab === tab
-                      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg "
-                      : "text-gray-600 hover:bg-gray-50"
+                    ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg "
+                    : "text-gray-600 hover:bg-gray-50"
                     }`}
                 >
                   {tab === "Interview"
@@ -267,7 +278,7 @@ const Page = () => {
                       ? "Resources"
                       : tab === "College"
                         ? "College"
-                        : "Interview"}
+                        : "Chatroom"}
                 </button>
               ))}
             </div>
@@ -277,7 +288,7 @@ const Page = () => {
                 {collegeItems.map((card, idx) => (
                   <div
                     key={idx}
-                    onClick={()=> router.push(card.href)}
+                    onClick={() => router.push(card.href)}
                     className="group cursor-pointer relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300  overflow-hidden"
                   >
                     <div
@@ -311,7 +322,7 @@ const Page = () => {
                 {InterviewCard.map((card, idx) => (
                   <div
                     key={idx}
-                    onClick={()=> router.push(card.href)}
+                    onClick={() => router.push(card.href)}
                     className="group cursor-pointer relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300  overflow-hidden"
                   >
                     <div
@@ -369,9 +380,9 @@ const Page = () => {
             {/* College / Solve Section */}
 
             {/* Interview Tab at bottom */}
-            {activeTab === "interview" && (
+            {activeTab === "Chatroom" && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {interviewItems.map((card, idx) => (
+                {chatRooms.map((card, idx) => (
                   <div
                     key={idx}
                     className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300  overflow-hidden"
