@@ -44,6 +44,14 @@ type Question = {
     company: string;
 };
 
+export const metadata = {
+  title: "Aptitude Topics | Practice Questions",
+  description: "Practice aptitude questions across various topics like Arithmetic, Coding & Decoding, Blood Relations, Logical Reasoning, and more. Prepare for placements and company interviews.",
+  keywords: "Aptitude, Reasoning, Coding, Decoding, Logical Puzzles, Placement Preparation, Interview Questions, Arithmetic, Blood Relations,nieved, nie ved",
+  authors: [{ name: "Gulshan" }],
+  viewport: "width=device-width, initial-scale=1.0",
+};
+
 const AptitudeTopicsPage = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeTopic, setActiveTopic] = useState("Alphanumeric Series");
