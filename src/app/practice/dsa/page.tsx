@@ -1,4 +1,6 @@
 "use client";
+import NotSigned from "@/app/NotSigned";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
@@ -209,6 +211,8 @@ const Page: React.FC = () => {
   const progress = Math.round((totalSolved / totalQuestions) * 100);
 
   return (
+    <>
+    <SignedIn>
     <div className="bg-black text-white min-h-screen p-4 sm:p-6">
       <h1 className="text-2xl mt-10 sm:text-3xl text-blue-400 font-bold mb-6 text-center">
         Top 107 LeetCode Questions
@@ -306,6 +310,13 @@ const Page: React.FC = () => {
         </div>
       ))}
     </div>
+    </SignedIn>
+    <SignedOut>
+      <NotSigned/>
+    </SignedOut>
+
+    </>
+
   );
 };
 

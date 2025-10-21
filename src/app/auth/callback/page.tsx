@@ -30,8 +30,6 @@ const CallbackPage = () => {
                     });
 
                     alert("Only NIE emails allowed! Your account has been removed.");
-                } else {
-                    window.location.href = "/sign-up";
                 }
             } catch (err) {
                 console.error(err);

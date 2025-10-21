@@ -18,6 +18,8 @@ import logicalPuzzlesQuestions from "./logicalpuzzle"
 import oddOneOutQuestions from "./odd-one-out"
 import statementAssumptionQuestions from "./Miscellaneous"
 import { IoMdClose } from "react-icons/io";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import NotSigned from "@/app/NotSigned";
 const topics = [
     "Alphanumeric Series",
     "Analogy / Reasoning Analogy",
@@ -94,116 +96,125 @@ const AptitudeTopicsPage = () => {
 
 
     return (
-        <div className="flex h-screen bg-gray-900 text-white">
+        <>
+            <SignedIn>
 
-            <div className={`bg-gray-800 hidden md:flex w-64 p-6 space-y-0 sticky top-0 transform 
+                <div className="flex h-screen bg-gray-900 text-white">
+
+                    <div className={`bg-gray-800 hidden md:flex w-64 p-6 space-y-0 sticky top-0 transform 
     ${isOpen ? "translate-x-0" : "-translate-x-full"} 
     h-screen transition-transform duration-300 ease-in-out md:translate-x-0 md:relative md:h-screen z-0`}>
 
-                <h1 className="text-2xl font-bold mb-6">Topics</h1>
-                <ul className="overflow-y-auto" style={{ maxHeight: 'calc(100vh - 6rem)' }}>
-                    {topics.map((topic, index) => (
-                        <li
-                            key={index}
-                            className={`cursor-pointer px-2 py-1 rounded ${activeTopic === topic ? "bg-purple-600 text-white" : "hover:text-gray-300"}`}
-                            onClick={() => {
-                                setActiveTopic(topic);
-                                setSelectedAnswers({});
-                            }}
-                        >
-                            {topic}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                        <h1 className="text-2xl font-bold mb-6">Topics</h1>
+                        <ul className="overflow-y-auto" style={{ maxHeight: 'calc(100vh - 6rem)' }}>
+                            {topics.map((topic, index) => (
+                                <li
+                                    key={index}
+                                    className={`cursor-pointer px-2 py-1 rounded ${activeTopic === topic ? "bg-purple-600 text-white" : "hover:text-gray-300"}`}
+                                    onClick={() => {
+                                        setActiveTopic(topic);
+                                        setSelectedAnswers({});
+                                    }}
+                                >
+                                    {topic}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-            {isOpen ?
-                <div className={`bg-gray-800 w-64 p-6 space-y-0 absolute top-24 transform 
+                    {isOpen ?
+                        <div className={`bg-gray-800 w-64 p-6 space-y-0 absolute top-24 transform 
     ${isOpen ? "translate-x-0" : "-translate-x-full"} 
     h-screen transition-transform duration-300 ease-in-out md:translate-x-0 md:relative md:h-screen z-30`}>
-                    <button className="absolute top-0 right-4 md:hidden z-30" onClick={() => setIsOpen(false)}>
-                        <IoMdClose size={20} />
-                    </button>
+                            <button className="absolute top-0 right-4 md:hidden z-30" onClick={() => setIsOpen(false)}>
+                                <IoMdClose size={20} />
+                            </button>
 
-                    <h1 className="text-2xl font-bold mb-6">Topics</h1>
-                    <ul className="overflow-y-auto" style={{ maxHeight: 'calc(100vh - 6rem)' }}>
-                        {topics.map((topic, index) => (
-                            <li
-                                key={index}
-                                className={`cursor-pointer px-2 py-1 rounded ${activeTopic === topic ? "bg-purple-600 text-white" : "hover:text-gray-300"}`}
-                                onClick={() => {
-                                    setActiveTopic(topic);
-                                    setSelectedAnswers({});
-                                }}
-                            >
-                                {topic}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                :
+                            <h1 className="text-2xl font-bold mb-6">Topics</h1>
+                            <ul className="overflow-y-auto" style={{ maxHeight: 'calc(100vh - 6rem)' }}>
+                                {topics.map((topic, index) => (
+                                    <li
+                                        key={index}
+                                        className={`cursor-pointer px-2 py-1 rounded ${activeTopic === topic ? "bg-purple-600 text-white" : "hover:text-gray-300"}`}
+                                        onClick={() => {
+                                            setActiveTopic(topic);
+                                            setSelectedAnswers({});
+                                        }}
+                                    >
+                                        {topic}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        :
 
-                <button className="absolute top-24 left-4 md:hidden z-30" onClick={() => setIsOpen(true)}>
-                    <FaBars size={20} />
-                </button>
+                        <button className="absolute top-24 left-4 md:hidden z-30" onClick={() => setIsOpen(true)}>
+                            <FaBars size={20} />
+                        </button>
 
-            }
+                    }
 
 
-            {/* Main Content */}
-            <div className="p-6 ml-0 md:ml-20 overflow-y-auto w-full h-screen">
-                <h1 className="text-3xl font-bold mb-6">{activeTopic}</h1>
+                    {/* Main Content */}
+                    <div className="p-6 ml-0 md:ml-20 overflow-y-auto w-full h-screen">
+                        <h1 className="text-3xl font-bold mb-6">{activeTopic}</h1>
 
-                {currentQuestions.length === 0 ? (
-                    <p className="text-gray-400">No questions available for this topic yet.</p>
-                ) : (
-                    <div className="space-y-8">
-                        {currentQuestions.map((q, index) => {
-                            const userAnswer = selectedAnswers[index];
-                            const isCorrect = userAnswer === q.answer;
+                        {currentQuestions.length === 0 ? (
+                            <p className="text-gray-400">No questions available for this topic yet.</p>
+                        ) : (
+                            <div className="space-y-8">
+                                {currentQuestions.map((q, index) => {
+                                    const userAnswer = selectedAnswers[index];
+                                    const isCorrect = userAnswer === q.answer;
 
-                            return (
-                                <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-md">
-                                    <div className="flex justify-between items-center mb-4">
-                                        <h2 className="text-xl font-semibold">{`Q${index + 1}: ${q.question}`}</h2>
-                                        <span className="text-sm text-gray-400">{q.company}</span>
-                                    </div>
+                                    return (
+                                        <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-md">
+                                            <div className="flex justify-between items-center mb-4">
+                                                <h2 className="text-xl font-semibold">{`Q${index + 1}: ${q.question}`}</h2>
+                                                <span className="text-sm text-gray-400">{q.company}</span>
+                                            </div>
 
-                                    <div className="space-y-2 mb-4">
-                                        {q.options.map((option, i) => (
-                                            <label
-                                                key={i}
-                                                className={`flex items-center p-2 rounded cursor-pointer hover:bg-gray-700 ${userAnswer === option ? "bg-purple-600" : ""
-                                                    }`}
-                                            >
-                                                <input
-                                                    type="radio"
-                                                    name={`q${index}`}
-                                                    value={option}
-                                                    checked={userAnswer === option}
-                                                    onChange={() => handleOptionChange(index, option)}
-                                                    className="mr-2"
-                                                />
-                                                {option}
-                                            </label>
-                                        ))}
-                                    </div>
+                                            <div className="space-y-2 mb-4">
+                                                {q.options.map((option, i) => (
+                                                    <label
+                                                        key={i}
+                                                        className={`flex items-center p-2 rounded cursor-pointer hover:bg-gray-700 ${userAnswer === option ? "bg-purple-600" : ""
+                                                            }`}
+                                                    >
+                                                        <input
+                                                            type="radio"
+                                                            name={`q${index}`}
+                                                            value={option}
+                                                            checked={userAnswer === option}
+                                                            onChange={() => handleOptionChange(index, option)}
+                                                            className="mr-2"
+                                                        />
+                                                        {option}
+                                                    </label>
+                                                ))}
+                                            </div>
 
-                                    {userAnswer && (
-                                        <div className="mt-4 p-3 bg-gray-700 rounded">
-                                            <p className={`font-semibold ${isCorrect ? "text-green-400" : "text-red-400"}`}>
-                                                {isCorrect ? "Correct!" : `Incorrect! Correct answer: ${q.answer}`}
-                                            </p>
-                                            <p className="text-gray-300 mt-2">{q.explanation}</p>
+                                            {userAnswer && (
+                                                <div className="mt-4 p-3 bg-gray-700 rounded">
+                                                    <p className={`font-semibold ${isCorrect ? "text-green-400" : "text-red-400"}`}>
+                                                        {isCorrect ? "Correct!" : `Incorrect! Correct answer: ${q.answer}`}
+                                                    </p>
+                                                    <p className="text-gray-300 mt-2">{q.explanation}</p>
+                                                </div>
+                                            )}
                                         </div>
-                                    )}
-                                </div>
-                            );
-                        })}
+                                    );
+                                })}
+                            </div>
+                        )}
                     </div>
-                )}
-            </div>
-        </div>
+                </div>
+            </SignedIn>
+            <SignedOut>
+                <NotSigned />
+            </SignedOut>
+
+        </>
     );
 };
 
