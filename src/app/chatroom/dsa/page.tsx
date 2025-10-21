@@ -192,7 +192,7 @@ const ComingSoonPage = () => {
 
       {/* Subheading */}
       <p className="text-lg md:text-xl text-white/80 mb-8 text-center max-w-xl">
-        We’re working hard behind the scenes to bring you something amazing. Stay tuned!
+        We&apos;re working hard behind the scenes to bring you something amazing. Stay tuned!
       </p>
 
       {/* Countdown placeholder */}
