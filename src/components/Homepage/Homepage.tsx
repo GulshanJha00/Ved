@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import {
@@ -22,6 +23,7 @@ import {
   FaCogs,
   FaCodeBranch,
   FaRegSmileWink,
+  FaRocketchat,
 } from "react-icons/fa";
 import { GiNotebook } from "react-icons/gi";
 
@@ -121,6 +123,13 @@ const Page = () => {
       title: "ML Space",
       description: "Machine Learning challenges",
       gradient: "from-pink-500 to-rose-500",
+      link: "/practice/ml",
+    },
+    {
+      icon: FaRocketchat,
+      title: "Chat Rooms",
+      description: "Machine Learning challenges",
+      gradient: "from-emerald-500 to-green-500",
       link: "/practice/ml",
     },
 
@@ -383,9 +392,10 @@ const Page = () => {
             {activeTab === "Chatroom" && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {chatRooms.map((card, idx) => (
-                  <div
+                  <Link
                     key={idx}
-                    className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300  overflow-hidden"
+                    href={card.href}
+                    className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden block"
                   >
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${card.gradient || "from-gray-200 to-gray-300"} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
@@ -399,15 +409,13 @@ const Page = () => {
                     )}
                     <h3 className="text-xl font-bold mb-2 text-gray-800">{card.title}</h3>
                     <p className="text-sm text-gray-600 mb-4">{card.description}</p>
-                    <a
-                      href={card.href}
-                      className={`inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r ${card.gradient || "from-gray-500 to-gray-600"} text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300 group-hover:gap-3`}
-                    >
+                    <div className={`inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r ${card.gradient || "from-gray-500 to-gray-600"} text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300 group-hover:gap-3`}>
                       Start Learning
                       <FaArrowRight className="text-sm" />
-                    </a>
-                  </div>
+                    </div>
+                  </Link>
                 ))}
+
               </div>
             )}
 

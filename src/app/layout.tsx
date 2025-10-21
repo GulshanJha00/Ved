@@ -6,6 +6,9 @@ import Loading from "./loading";
 import { Rowdies } from "next/font/google";
 import NavbarWrapper from "./NavbarWrapper";
 import FoooterWrapper from "./FooterWrapper";
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,7 +24,7 @@ const geistMono = localFont({
 const rowdies = Rowdies({
   subsets: ["latin"],
   variable: "--rowdies",
-  weight:  "300"
+  weight: "300"
 })
 
 export const metadata: Metadata = {
@@ -30,49 +33,53 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-  return (
-    <html lang="en">
-      <head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5826477007107638"
-     crossOrigin="anonymous"></script>
 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5826477007107638"
-     crossOrigin="anonymous"></script>
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-5826477007107638"
-        ></meta>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-W42NPGFX9E"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+  return (
+    <ClerkProvider>
+      <html lang="en">
+        <head>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5826477007107638"
+            crossOrigin="anonymous"></script>
+
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5826477007107638"
+            crossOrigin="anonymous"></script>
+          <meta
+            name="google-adsense-account"
+            content="ca-pub-5826477007107638"
+          ></meta>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-W42NPGFX9E"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-W42NPGFX9E');
             `,
-          }}
-        />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased no-scrollbar`}
-      >
-        <Suspense fallback={<Loading />}>
-          <NavbarWrapper /> 
+            }}
+          />
+        </head>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased no-scrollbar`}
+        >
 
-          {children}
-          <FoooterWrapper/>
-        </Suspense>
-        <span className={`${rowdies.variable}`}></span>
-      </body>
-    </html>
+          <Suspense fallback={<Loading />}>
+            <NavbarWrapper />
+
+            {children}
+            <FoooterWrapper />
+          </Suspense>
+          <span className={`${rowdies.variable}`}></span>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
