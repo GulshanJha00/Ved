@@ -98,6 +98,7 @@ filter.addWords(
   "d1ck",
   "(.)(.)",
   "( . )( . )",
+  "()",
   "p*ssy",
   "c*nt",
   "sl!t",
