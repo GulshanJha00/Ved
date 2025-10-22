@@ -37,10 +37,14 @@ const Page = () => {
 
   const [inputMessage, setInputMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const chatEndRef = React.useRef<HTMLDivElement | null>(null);
+  const chatContainerRef = React.useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   }, [messages]);
+
   useEffect(() => {
     if (!socket) {
       socket = io(`${process.env.NEXT_PUBLIC_BACKEND_URI}`);
@@ -140,12 +144,14 @@ const Page = () => {
 
               {/* Chat Body */}
               <div className="bg-slate-800/50 border-x-2 border-purple-500 backdrop-blur-sm">
-                <div className="h-[500px] overflow-y-auto p-4 space-y-4 custom-scrollbar">
+                <div
+                  ref={chatContainerRef}
+                  className="h-[500px] overflow-y-auto p-4 space-y-4 custom-scrollbar"
+                >
                   {messages.map((msg) => (
                     <div
                       key={msg._id || msg.id}
-                      className={`flex ${msg.user === user?.fullName ? "justify-end" : "justify-start"
-                        }`}
+                      className={`flex ${msg.user === user?.fullName ? "justify-end" : "justify-start"}`}
                     >
                       <div className="max-w-[70%]">
                         <div className="flex items-center gap-2 mb-1">
@@ -158,12 +164,10 @@ const Page = () => {
                           <p className="text-slate-200">{msg.text}</p>
                         </div>
                       </div>
-                  <div ref={chatEndRef}></div>
-
                     </div>
                   ))}
-
                 </div>
+
 
                 {/* Input */}
                 <div className="border-t-2 border-purple-500/30 p-4 bg-slate-800/80">
