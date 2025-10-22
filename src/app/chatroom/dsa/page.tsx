@@ -37,14 +37,17 @@ const Page = () => {
 
   const [inputMessage, setInputMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-
+const chatEndRef = React.useRef<HTMLDivElement | null>(null);
+useEffect(() => {
+  chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [messages]);
   useEffect(() => {
     if (!socket) {
       socket = io(`${process.env.NEXT_PUBLIC_BACKEND_URI}`);
 
 
       socket.on("connect", () => {
-        toast.success("Connection Created")
+        console.log("Connection Created")
       });
 
       socket.on("receiveMessage", (data: ChatMessage) => {
@@ -138,6 +141,8 @@ const Page = () => {
                       </div>
                     </div>
                   ))}
+                  <div ref={chatEndRef}></div>
+
                 </div>
 
                 {/* Input */}
