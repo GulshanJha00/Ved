@@ -6,21 +6,19 @@ import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 import NotSigned from "@/app/NotSigned";
 import Loading from "@/app/loading";
 import { toast, ToastContainer } from "react-toastify";
+import filter from "../badwords";
 
-// Define the shape of each chat message
 interface ChatMessage {
-  _id?: string; // MongoDB ID
-  id?: string; 
+  _id?: string;
+  id?: string;
   user: string;
   text: string;
   time: string;
 }
 
-// Define socket event types (for better IntelliSense)
 interface ServerToClientEvents {
   receiveMessage: (data: ChatMessage) => void;
-  previousMessages: (msgs: ChatMessage[]) => void; // <-- add this
-
+  previousMessages: (msgs: ChatMessage[]) => void;
 }
 
 interface ClientToServerEvents {
@@ -28,22 +26,26 @@ interface ClientToServerEvents {
   sendMessage: (data: { room: string; message: string; user: string }) => void;
 }
 
-// Socket variable (typed)
 let socket: Socket<ServerToClientEvents, ClientToServerEvents> | null = null;
 
 const Page = () => {
-  const room = "ml"
+  const room = "ml";
   const { user } = useUser();
 
   const [inputMessage, setInputMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const chatEndRef = React.useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   useEffect(() => {
     if (!socket) {
-      socket = io(`${process.env.BACKEND_URI}`);
+      socket = io(`${process.env.NEXT_PUBLIC_BACKEND_URI}`);
 
       socket.on("connect", () => {
-        toast.success("Connection Created")
+        toast.success("Connection Created");
       });
 
       socket.on("receiveMessage", (data: ChatMessage) => {
@@ -65,24 +67,38 @@ const Page = () => {
     };
   }, [room]);
 
-
   const handleSendMessage = () => {
     if (!socket || !inputMessage.trim()) return;
 
+    const normalize = (msg: string) =>
+      msg
+        .toLowerCase()
+        .replace(/[@4]/g, "a")
+        .replace(/1/g, "i")
+        .replace(/3/g, "e")
+        .replace(/0/g, "o")
+        .replace(/\$/g, "s");
+
+    const safeMsg = normalize(inputMessage);
+
+    let cleanMessage = inputMessage;
+    if (filter.isProfane(safeMsg)) {
+      toast.error("Please avoid using offensive language");
+      cleanMessage = filter.clean(inputMessage);
+      if (cleanMessage.includes("*") && cleanMessage.length <= 10) return;
+    }
+
     const msgData = {
-      id: crypto.randomUUID(), // can omit if backend generates id
+      id: crypto.randomUUID(),
       user: user?.fullName || "Anonymous",
-      text: inputMessage,
+      text: cleanMessage,
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     };
 
-    // Send to backend
     socket.emit("sendMessage", { room, message: msgData.text, user: msgData.user });
-
     setInputMessage("");
   };
 
-  // Handle Enter key
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") handleSendMessage();
   };
@@ -90,12 +106,11 @@ const Page = () => {
   return (
     <>
       <SignedIn>
-        {!messages ?
+        {!messages ? (
           <div className="h-screen w-full overflow-hidden">
             <Loading />
           </div>
-          :
-
+        ) : (
           <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4">
             <div className="max-w-5xl mx-auto">
               <div className="bg-slate-800 border-2 border-purple-500 rounded-t-lg p-4 shadow-lg shadow-purple-500/20">
@@ -115,20 +130,16 @@ const Page = () => {
                 </div>
               </div>
 
-              {/* Chat Body */}
               <div className="bg-slate-800/50 border-x-2 border-purple-500 backdrop-blur-sm">
                 <div className="h-[500px] overflow-y-auto p-4 space-y-4 custom-scrollbar">
                   {messages.map((msg) => (
                     <div
                       key={msg._id || msg.id}
-                      className={`flex ${msg.user === user?.fullName ? "justify-end" : "justify-start"
-                        }`}
+                      className={`flex ${msg.user === user?.fullName ? "justify-end" : "justify-start"}`}
                     >
                       <div className="max-w-[70%]">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-purple-400 font-semibold text-sm font-mono">
-                            {msg.user}
-                          </span>
+                          <span className="text-purple-400 font-semibold text-sm font-mono">{msg.user}</span>
                           <span className="text-slate-500 text-xs font-mono">{msg.time}</span>
                         </div>
                         <div className="bg-slate-700 border border-slate-600 rounded-lg p-3 shadow-lg">
@@ -137,9 +148,9 @@ const Page = () => {
                       </div>
                     </div>
                   ))}
+                  <div ref={chatEndRef}></div>
                 </div>
 
-                {/* Input */}
                 <div className="border-t-2 border-purple-500/30 p-4 bg-slate-800/80">
                   <div className="flex gap-3">
                     <input
@@ -160,15 +171,13 @@ const Page = () => {
                 </div>
               </div>
 
-              {/* Footer */}
               <div className="bg-slate-800 border-2 border-t-0 border-purple-500 rounded-b-lg p-3 text-center text-slate-400 font-mono text-sm">
                 Connected Room: {room}
               </div>
             </div>
             <ToastContainer />
           </div>
-        }
-
+        )}
 
         <style jsx>{`
           .custom-scrollbar::-webkit-scrollbar {
@@ -188,13 +197,13 @@ const Page = () => {
       </SignedIn>
 
       <SignedOut>
-        {!messages ?
+        {!messages ? (
           <div className="h-screen w-full overflow-hidden">
             <Loading />
           </div>
-          :
+        ) : (
           <NotSigned />
-        }
+        )}
       </SignedOut>
     </>
   );
