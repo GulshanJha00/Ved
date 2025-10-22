@@ -40,7 +40,8 @@ const Page = () => {
 
   useEffect(() => {
     if (!socket) {
-      socket = io("http://localhost:3001");
+      socket = io(`${process.env.NEXT_PUBLIC_BACKEND_URI}`);
+
 
       socket.on("connect", () => {
         toast.success("Connection Created")

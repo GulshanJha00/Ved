@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React from 'react'
 import {
     FaCode,
-    
     FaBrain,
     FaCalculator,
     FaComments,
