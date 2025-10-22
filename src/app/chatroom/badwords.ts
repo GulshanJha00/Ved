@@ -6,6 +6,7 @@ const filter = new Filter();
 filter.addWords(
   "chutiya",
   "mf",
+  "gulabi",
   "chutiye",
   "madarchod",
   "behenchod",
