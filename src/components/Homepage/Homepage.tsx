@@ -91,19 +91,20 @@ const Page = () => {
 
   const practiceSections = [
     {
-      icon: FaCode,
-      title: "Challenges",
-      description: "Solve coding problems of varying difficulty",
-      gradient: "from-orange-500 to-red-500",
-      link: "/practice/first/question",
+      icon: FaRocketchat,
+      title: "Chat Rooms",
+      description: "Join Chat Rooms",
+      gradient: "from-emerald-500 to-green-500",
+      link: "/chatroom",
     },
     {
       icon: FaLaptopCode,
-      title: "Dev Space",
+      title: "Resources",
       description: "Hands-on development projects",
       gradient: "from-violet-500 to-purple-500",
-      link: "/practice/dev",
+      link: "/resources",
     },
+
     {
       icon: FaBook,
       title: "Interview Prep",
@@ -111,6 +112,14 @@ const Page = () => {
       gradient: "from-blue-500 to-indigo-500",
       link: "/interview",
     },
+    {
+      icon: FaCode,
+      title: "Challenges",
+      description: "Solve coding problems of varying difficulty",
+      gradient: "from-orange-500 to-red-500",
+      link: "/practice/first/question",
+    },
+
     {
       icon: FaDatabase,
       title: "DSA Space",
@@ -125,13 +134,7 @@ const Page = () => {
       gradient: "from-pink-500 to-rose-500",
       link: "/practice/ml",
     },
-    {
-      icon: FaRocketchat,
-      title: "Chat Rooms",
-      description: "Machine Learning challenges",
-      gradient: "from-emerald-500 to-green-500",
-      link: "/practice/ml",
-    },
+    
 
   ];
 

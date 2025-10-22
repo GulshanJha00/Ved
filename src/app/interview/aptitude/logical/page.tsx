@@ -98,10 +98,8 @@ const AptitudeTopicsPage = () => {
     return (
         <>
             <SignedIn>
-
                 <div className="flex h-screen bg-gray-900 text-white">
-
-                    <div className={`bg-gray-800 hidden md:flex w-64 p-6 space-y-0 sticky top-0 transform 
+                    <div className={`bg-gray-800 hidden md:block w-64 p-6 space-y-0 sticky top-0 transform 
     ${isOpen ? "translate-x-0" : "-translate-x-full"} 
     h-screen transition-transform duration-300 ease-in-out md:translate-x-0 md:relative md:h-screen z-0`}>
 
@@ -123,10 +121,10 @@ const AptitudeTopicsPage = () => {
                     </div>
 
                     {isOpen ?
-                        <div className={`bg-gray-800 w-64 p-6 space-y-0 absolute top-24 transform 
+                        <div className={`bg-gray-800 w-64 p-6 space-y-0 absolute top-16 transform 
     ${isOpen ? "translate-x-0" : "-translate-x-full"} 
     h-screen transition-transform duration-300 ease-in-out md:translate-x-0 md:relative md:h-screen z-30`}>
-                            <button className="absolute top-0 right-4 md:hidden z-30" onClick={() => setIsOpen(false)}>
+                            <button className="absolute top-3 bg-black p-2 rounded-md right-4 md:hidden z-30" onClick={() => setIsOpen(false)}>
                                 <IoMdClose size={20} />
                             </button>
 
@@ -148,7 +146,7 @@ const AptitudeTopicsPage = () => {
                         </div>
                         :
 
-                        <button className="absolute top-24 left-4 md:hidden z-30" onClick={() => setIsOpen(true)}>
+                        <button className="absolute top-16 bg-black p-2 rounded-md left-4 md:hidden z-30" onClick={() => setIsOpen(true)}>
                             <FaBars size={20} />
                         </button>
 
