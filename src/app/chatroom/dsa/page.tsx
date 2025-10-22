@@ -6,11 +6,11 @@ import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 import NotSigned from "@/app/NotSigned";
 import Loading from "@/app/loading";
 import { toast, ToastContainer } from "react-toastify";
+import filter from "../badwords";
 
-// Define the shape of each chat message
 interface ChatMessage {
   _id?: string; // MongoDB ID
-  id?: string; 
+  id?: string;
   user: string;
   text: string;
   time: string;
@@ -37,10 +37,10 @@ const Page = () => {
 
   const [inputMessage, setInputMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-const chatEndRef = React.useRef<HTMLDivElement | null>(null);
-useEffect(() => {
-  chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-}, [messages]);
+  const chatEndRef = React.useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
   useEffect(() => {
     if (!socket) {
       socket = io(`${process.env.NEXT_PUBLIC_BACKEND_URI}`);
@@ -69,22 +69,41 @@ useEffect(() => {
     };
   }, [room]);
 
-
   const handleSendMessage = () => {
     if (!socket || !inputMessage.trim()) return;
 
+    const normalize = (msg: string) =>
+      msg
+        .toLowerCase()
+        .replace(/[@4]/g, "a")
+        .replace(/1/g, "i")
+        .replace(/3/g, "e")
+        .replace(/0/g, "o")
+        .replace(/\$/g, "s");
+
+    const safeMsg = normalize(inputMessage);
+
+    // Filter bad words
+    let cleanMessage = inputMessage;
+    if (filter.isProfane(safeMsg)) {
+      toast.error("Please avoid using offensive language");
+      cleanMessage = filter.clean(inputMessage);
+
+      if (cleanMessage.includes("*") && cleanMessage.length <= 10) return;
+    }
+
     const msgData = {
-      id: crypto.randomUUID(), // can omit if backend generates id
+      id: crypto.randomUUID(),
       user: user?.fullName || "Anonymous",
-      text: inputMessage,
+      text: cleanMessage,
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     };
 
-    // Send to backend
     socket.emit("sendMessage", { room, message: msgData.text, user: msgData.user });
 
     setInputMessage("");
   };
+
 
   // Handle Enter key
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
