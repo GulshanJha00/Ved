@@ -7,6 +7,7 @@ filter.addWords(
   "chutiya",
   "mf",
   "gulabi",
+  "kala",
   "chutiye",
   "madarchod",
   "behenchod",
