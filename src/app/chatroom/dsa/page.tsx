@@ -158,9 +158,10 @@ const Page = () => {
                           <p className="text-slate-200">{msg.text}</p>
                         </div>
                       </div>
+                  <div ref={chatEndRef}></div>
+
                     </div>
                   ))}
-                  <div ref={chatEndRef}></div>
 
                 </div>
 
