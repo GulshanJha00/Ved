@@ -22,5 +22,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci --force
-    - run: npm run build
+    - name: Set environment variables
+      run: |
+        echo "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}" >> $GITHUB_ENV
+        echo "CLERK_SECRET_KEY=${{ secrets.CLERK_SECRET_KEY }}" >> $GITHUB_ENV
+        echo "EMAIL_USER=${{ secrets.EMAIL_USER }}" >> $GITHUB_ENV
+        echo "EMAIL_PASS=${{ secrets.EMAIL_PASS }}" >> $GITHUB_ENV
+        echo "JUDGE0_API_KEY=${{ secrets.JUDGE0_API_KEY }}" >> $GITHUB_ENV
+        echo "JUDGE0_API_URI=${{ secrets.JUDGE0_API_URI }}" >> $GITHUB_ENV
+    - name: Install dependencies
+      run: npm ci --legacy-peer-deps
+
+    - name: Build project
+      run: npm run build
+
