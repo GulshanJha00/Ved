@@ -1,32 +1,17 @@
 "use client"
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React from 'react'
 import {
-    FaGraduationCap,
-    FaBook,
-    FaChalkboardTeacher,
-    FaClipboardList,
-    FaUniversity,
     FaCode,
-    FaLaptopCode,
-    FaDatabase,
-    FaRobot,
+    
     FaBrain,
     FaCalculator,
     FaComments,
     FaArrowRight,
     FaUserTie,
     FaQuestionCircle,
-    FaPaintBrush,
-    FaThLarge,
-    FaCogs,
-    FaCodeBranch,
-    FaRegSmileWink,
-    FaRocketchat,
 } from "react-icons/fa";
 const page = () => {
-    const router = useRouter();
     const InterviewCard = [
         {
             title: "Logical Reasoning",

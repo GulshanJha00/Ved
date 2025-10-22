@@ -1,27 +1,11 @@
 import Link from 'next/link';
 import React from 'react'
 import {
-    FaGraduationCap,
-    FaBook,
-    FaChalkboardTeacher,
-    FaClipboardList,
-    FaUniversity,
     FaCode,
-    FaLaptopCode,
-    FaDatabase,
     FaRobot,
-    FaBrain,
-    FaCalculator,
-    FaComments,
     FaArrowRight,
-    FaUserTie,
-    FaQuestionCircle,
-    FaPaintBrush,
-    FaThLarge,
-    FaCogs,
     FaCodeBranch,
     FaRegSmileWink,
-    FaRocketchat,
 } from "react-icons/fa";
 const page = () => {
     const chatRooms = [
@@ -71,9 +55,9 @@ const page = () => {
                     <h1 className='text-5xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg'>
                         Explore Our Chatroom
                     </h1>
-                  <p className="text-xl text-white/90 max-w-2xl mx-auto font-light">
-  Collaborate, share knowledge, and grow with peers on NIE&apos;s first dedicated peer-learning platform.
-</p>
+                    <p className="text-xl text-white/90 max-w-2xl mx-auto font-light">
+                        Collaborate, share knowledge, and grow with peers on NIE&apos;s first dedicated peer-learning platform.
+                    </p>
 
                     {/* Decorative line */}
                     <div className="mt-8 flex items-center justify-center gap-3">
