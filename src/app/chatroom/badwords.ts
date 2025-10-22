@@ -96,6 +96,8 @@ filter.addWords(
   "b1tch",
   "d!ck",
   "d1ck",
+  "(.)(.)",
+  "( . )( . )",
   "p*ssy",
   "c*nt",
   "sl!t",

@@ -83,7 +83,8 @@ const Page = () => {
         .replace(/1/g, "i")
         .replace(/3/g, "e")
         .replace(/0/g, "o")
-        .replace(/\$/g, "s");
+        .replace(/\$/g, "s")
+        .replace(/\s+/g, "");
 
     const safeMsg = normalize(inputMessage);
 
@@ -100,7 +101,12 @@ const Page = () => {
       id: crypto.randomUUID(),
       user: user?.fullName || "Anonymous",
       text: cleanMessage,
-      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      time: new Date().toLocaleTimeString("en-IN", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+        timeZone: "Asia/Kolkata", // ✅ This ensures IST
+      }),
     };
 
     socket.emit("sendMessage", { room, message: msgData.text, user: msgData.user });
