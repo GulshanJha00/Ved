@@ -186,7 +186,7 @@ const Page = () => {
   const chatRooms = [
     {
       title: "DSA ChatRoom",
-      description: "Collaborate and solve Data Structures & Algorithms problems with peers.",
+      description: "Talk with peers about Question of the and many more on NIE VED",
       gradient: "from-purple-500 to-pink-500",
       icon: FaCode,
       href: "/chatroom/dsa",
@@ -219,21 +219,21 @@ const Page = () => {
   const collegeItems = [
     {
       title: "College Notes",
-      description: "Follow a structured DSA sheet to master algorithms",
+      description: "NIE college notes semester and subject wise. ",
       gradient: "from-purple-500 to-pink-500",
       icon: GiNotebook,
       href: "/notes",
     },
     {
-      title: "DSA Practice Sheet",
-      description: "Follow a structured DSA sheet to master algorithms",
+      title: "Learn Coding Language",
+      description: "Follow a structured NIE VED's Learning sheet to programming Language",
       gradient: "from-blue-500 to-cyan-500",
       icon: FaDatabase,
       href: "practice/first/question",
     },
     {
       title: "DSA 107 Days Sheet",
-      description: "Step-by-step guide to master DSA in 107 days",
+      description: "NIE VED's curated collection of 107 handmade DSA questions for placements",
       gradient: "from-green-500 to-emerald-500",
       icon: FaDatabase,
       href: "/practice/dsa",

@@ -3,9 +3,34 @@ import React from "react";
 import Button from "@/components/Button";
 import { FaGraduationCap, FaBook, FaChalkboardTeacher, FaClipboardList, FaUniversity } from "react-icons/fa";
 import FlexBoxAds from "@/components/flexbox/FlexBoxAds";
+import Head from "next/head";
 
 const Page = () => {
   return (
+    <>
+    <Head>
+        <title>NIE VED | Semester Notes & Study Material</title>
+        <meta
+          name="description"
+          content="Access NIE Mysore semester-wise notes, study materials, and guides for all engineering subjects. Simplify your learning with NIE VED."
+        />
+         <meta
+          name="keywords"
+          content="NIE VED, NIEVED, nieved, nie ved, college notes, DSA, aptitude, interview preparation, placement resources, coding sheet"
+        />
+        <meta property="og:title" content="NIE VED | Semester Notes" />
+        <meta
+          property="og:description"
+          content="Browse semester-wise notes for NIE Mysore students. Study smarter with curated notes and guides."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nieved.vercel.app/notes" />
+        <meta property="og:image" content="/VED.png" />
+        <link rel="canonical" href="https://nieved.vercel.app/notes" />
+
+        
+          
+      </Head>
     <div className="min-h-screen bg-gradient-to-r from-purple-600 to-blue-600 flex flex-col justify-center items-center py-16 px-6 space-y-12">
       {/* Title Section */}
       <div className="text-center w-full max-w-4xl mx-auto">
@@ -49,6 +74,8 @@ const Page = () => {
       
       <FlexBoxAds/>
     </div>
+    </>
+
   );
 };
 
