@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://nieved.vercel.app/sitemap.xml
