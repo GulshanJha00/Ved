@@ -75,10 +75,12 @@ export default function RootLayout({
         >
           {/* ✅ Google AdSense */}
           <Script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-5826477007107638"
-            crossOrigin="anonymous"
-          />
+  id="adsense-init"
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5826477007107638"
+  crossOrigin="anonymous"
+/>
+
 
           {/* ✅ Google Analytics */}
           <Script
