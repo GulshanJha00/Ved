@@ -3,6 +3,7 @@ import React from "react";
 import Button from "@/components/Button";
 import FlexBoxAds from "@/components/flexbox/FlexBoxAds";
 import { FaCloud, FaNetworkWired, FaListAlt, FaProjectDiagram, FaBrain } from "react-icons/fa";
+import { GiProcessor } from "react-icons/gi";
 
 const Page = () => {
   return (
@@ -52,6 +53,12 @@ const Page = () => {
 
             text={<><FaBrain className="mr-3 text-2xl" />ToC</>} 
             href="https://drive.google.com/drive/u/5/folders/1_GxB3K0I1SKrmhGkBzv9-OFbe-u6ppMD" 
+          />
+          <Button 
+         target="_blank"
+
+            text={<><GiProcessor  className="mr-3 text-2xl" />RM & IPR</>} 
+            href="https://drive.google.com/drive/folders/1pWfPpFxb_BqLFtmSyf0EPmQNS0xQF-yC?usp=drive_link" 
           />
         </div>
 
