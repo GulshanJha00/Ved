@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   keywords:
     "NIE VED, NIEVED, nieved, nie ved, college notes, DSA, aptitude, interview preparation, placement resources, coding sheet",
   verification: {
-    google: "EZYhXo3Dvp34X0LyJLMyI6hEBfM1WigNi6olkQu-Kl8",
+    google: "DA7E6RL06YxmIUQrGYODCSB2-o5hBjTqC1bLH-TUlM8",
   },
   openGraph: {
     title: "NIE VED | Study & Placement Platform",
