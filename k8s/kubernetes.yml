@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nieved-namespace
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nieved-deployment
+  namespace: nieved-namespace
+  labels:
+    app: nieved-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nieved-deployment
+  template:
+    metadata:
+      labels:
+        app: nieved-deployment
+    spec:
+      containers:
+      - name: nieved-deployment
+        image: gulshanjha0/nie-ved:1
+        ports:
+        - containerPort: 3000
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nieved-deployment
+  namespace: nieved-namespace
+spec:
+  type: ClusterIP
+  selector:
+    app: nieved-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
