@@ -9,7 +9,7 @@
   top: 0px;
   width: 100%;
   z-index: 50;
-  background-color: rgba(164, 147, 245, 0.363); /* Transparent background */
+  background-color: rgba(163, 147, 245, 0.82); /* Transparent background */
   backdrop-filter: blur(10px); 
   -webkit-backdrop-filter: blur(10px); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
