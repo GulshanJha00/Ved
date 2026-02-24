@@ -44,6 +44,11 @@ const Page = () => {
           text={<><FaUniversity className="mr-3 text-2xl" />5th Semester</>} 
           href="/notes/getnotes/fifth" 
         />
+        <Button
+        target=""  
+          text={<><FaUniversity className="mr-3 text-2xl" />6th Semester</>} 
+          href="/notes/getnotes/sixth" 
+        />
       </div>
 
       
