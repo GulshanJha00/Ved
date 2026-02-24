@@ -54,6 +54,11 @@ const Page = () => {
     <>
   <div className="relative flex min-h-screen bg-[#ffdd00] flex-col w-screen justify-center h-screen px-4 sm:px-8 md:px-16 space-y-8 sm:space-y-10">
     {/* Title Section */}
+    <Link href={"/"}>
+    <h1 className="absolute top-20 px-4 py-2 bg-blue-500 text-white font-bold rounded-2xl">Go back</h1>
+    </Link>
+
+      
     <div className="w-full max-w-4xl">
       <h1 className="practice-header text-4xl sm:text-5xl md:text-7xl font-extrabold font-serif text-black tracking-tight">
         Master coding through practice and challenges

@@ -10,8 +10,8 @@ const devChallenges = [
   { title: "Flexbox Battle", icon: FaCubes, link: "/flexbox-game", p: "Master CSS Flexbox with interactive coding challenges." },
   { title: "Grid Challenge", icon: FaThLarge, link: "/practice/dev/grid", p: "Learn CSS Grid with structured hands-on challenges." },
   { title: "Component Library", icon: FaCode, link: "/practice/dev/component-library", p: "Browse and build reusable UI components with Tailwind and React." },
-  { title: "Clone Figma Design", icon: FaPaintBrush, link: "/practice/dev/figma-clone", p: "Recreate Figma designs to sharpen your frontend skills." },
-  { title: "ChatRoom", icon: FaComments, link: "/practice/dev/chatroom", p: "Join discussions, collaborate, and solve coding challenges together." },
+  { title: "DSA Practice", icon: FaPaintBrush, link: "/practice/dsa", p: "Recreate Figma designs to sharpen your frontend skills." },
+  { title: "Interview Prep", icon: FaComments, link: "/practice/interview", p: "Join discussions, collaborate, and solve coding challenges together." },
 ];
 
 export default function NavbarWrapper() {
@@ -22,8 +22,9 @@ export default function NavbarWrapper() {
   if (path2) return <Navbar />;
 
   const pathName = pathname.startsWith("/practice");
+  const pathName2 = pathname.startsWith("/flexbox-game");
 
-  if (pathName) return (
+  if (pathName || pathName2) return (
     <nav className="fixed top-0 left-0 w-full bg-black text-white shadow-md z-50">
       <div className="flex justify-between items-center py-4 px-4 sm:px-8">
         <Link href={"/practice"}>
