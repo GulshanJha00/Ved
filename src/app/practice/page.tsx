@@ -57,8 +57,6 @@ const Page = () => {
     <Link href={"/"}>
     <h1 className="absolute top-20 px-4 py-2 bg-blue-500 text-white font-bold rounded-2xl">Go back</h1>
     </Link>
-
-      
     <div className="w-full max-w-4xl">
       <h1 className="practice-header text-4xl sm:text-5xl md:text-7xl font-extrabold font-serif text-black tracking-tight">
         Master coding through practice and challenges
