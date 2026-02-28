@@ -40,7 +40,7 @@ const Homepage = () => {
         </div>
 
         {/* Block Component */}
-        <Block />
+        <Block data-testid='TestId1' />
       </div>
     </>
   );
