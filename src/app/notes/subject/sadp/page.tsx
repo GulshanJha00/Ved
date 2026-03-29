@@ -9,7 +9,7 @@ type ModuleMap = {
 
 const modules: ModuleMap = {
     1: "https://drive.google.com/file/d/129ks2FHdHWUAjVjfa_cH_965q5FiR7nG/preview",
-    2: "https://drive.google.com/file/d/1IDStftbudL_HdM6Qi774zTxJEKDdqFTV/preview",
+    2: "https://drive.google.com/file/d/1WD1tIe8W1KvPo_ryPPQ8bIPhQKrXA3kM/preview",
     3: "https://drive.google.com/file/d/1b69fouy1a4RiiMxG3SX_3BUAjG6mY9i2/preview",
     4: "https://drive.google.com/file/d/1RaviUNkBiBzVXEQzELl1xUc18Da2HquS/preview",
     5: "https://drive.google.com/file/d/17oUxsyD4va08h7W81K8rh943rPghb_AK/preview",
