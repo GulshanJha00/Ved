@@ -10,7 +10,7 @@ const devChallenges = [
   { title: "Flexbox Battle", icon: FaCubes, link: "/flexbox-game", p: "Master CSS Flexbox with interactive coding challenges." },
   { title: "Grid Challenge", icon: FaThLarge, link: "/practice/dev/grid", p: "Learn CSS Grid with structured hands-on challenges." },
   { title: "Component Library", icon: FaCode, link: "/practice/dev/component-library", p: "Browse and build reusable UI components with Tailwind and React." },
-  { title: "DSA Practice", icon: FaPaintBrush, link: "/practice/dsa", p: "Recreate Figma designs to sharpen your frontend skills." },
+  { title: "DSA Practice", icon: FaPaintBrush, link: "/practice/interview/dsa", p: "Recreate Figma designs to sharpen your frontend skills." },
   { title: "Interview Prep", icon: FaComments, link: "/practice/interview", p: "Join discussions, collaborate, and solve coding challenges together." },
 ];
 

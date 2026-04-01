@@ -1,93 +1,239 @@
 "use client";
-import Sidebar from "@/components/components-Library/Sidebar";
-import React from "react";
+import { useEffect, useState } from "react";
 
-const Introduction = () => {
+type CheckedType = Record<string, boolean>;
+
+const STORAGE_KEY = "dbms_checklist";
+
+// ✅ FULL DATA
+const DATA = [
+  {
+    title: "DBMS Fundamentals",
+    items: [
+      "What is DBMS vs RDBMS",
+      "Types of DBMS",
+      "3-Level Architecture",
+      "Data Independence",
+      "Schema vs Instance",
+      "DDL, DML, DCL, TCL",
+    ],
+  },
+  {
+    title: "ER Model",
+    items: [
+      "Entity & Attributes",
+      "Relationships (1:1, 1:N, M:N)",
+      "Strong vs Weak Entity",
+      "ER Diagram",
+      "ER to Relational",
+    ],
+  },
+  {
+    title: "Keys",
+    items: [
+      "Super Key, Candidate Key, Primary Key",
+      "Foreign Key",
+      "Composite & Alternate Key",
+      "Referential Integrity",
+    ],
+  },
+  {
+    title: "SQL",
+    items: [
+      "SELECT, WHERE, GROUP BY",
+      "JOINs",
+      "Subqueries",
+      "Aggregate Functions",
+      "Indexes",
+      "Window Functions",
+    ],
+  },
+  {
+    title: "Normalization",
+    items: [
+      "1NF, 2NF, 3NF",
+      "BCNF",
+      "Functional Dependencies",
+      "Anomalies",
+      "Lossless Join",
+    ],
+  },
+  {
+    title: "Transactions",
+    items: [
+      "ACID Properties",
+      "Transaction States",
+      "Serializability",
+      "Recoverability",
+    ],
+  },
+  {
+    title: "Concurrency",
+    items: [
+      "Locks (S/X)",
+      "2PL",
+      "Deadlocks",
+      "Isolation Levels",
+      "MVCC",
+    ],
+  },
+  {
+    title: "Indexing",
+    items: [
+      "B-Tree, B+ Tree",
+      "Dense vs Sparse",
+      "Hashing",
+      "Index Trade-offs",
+    ],
+  },
+];
+
+export default function Page() {
+  const [checked, setChecked] = useState<CheckedType>({});
+
+  // load
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (data) setChecked(JSON.parse(data));
+  }, []);
+
+  // save
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(checked));
+  }, [checked]);
+
+  const toggle = (item: string) => {
+    setChecked((prev) => ({
+      ...prev,
+      [item]: !prev[item],
+    }));
+  };
+
+  const markAll = (items: string[]) => {
+    const updates: CheckedType = {};
+    items.forEach((item) => {
+      updates[item] = true;
+    });
+    setChecked((prev) => ({ ...prev, ...updates }));
+  };
+
+  const total = DATA.flatMap((t) => t.items).length;
+  const done = Object.values(checked).filter(Boolean).length;
+  const progress = Math.round((done / total) * 100);
+
   return (
-    <div className="h-max w-screen bg-[#e7f7db] ">
-      <div className="w-full flex h-screen ">
-        <Sidebar />
+    <div className="min-h-screen pt-20 bg-gradient-to-br from-[#0f0f1a] to-[#1a1a2e] text-white px-4 py-8">
+      
+      <div className="max-w-3xl mx-auto">
 
-        <div className="w-[90%] overflow-auto h-full pt-20 pl-4">
-          <h1 className="text-5xl font-bold mb-4">Component Library</h1>
-          <p className="text-lg text-gray-700 mb-8">
-            Browse and copy ready-to-use UI components with Tailwind CSS. Enhance your development workflow with clean, customizable elements.
+        {/* HEADER */}
+        <h1 className="text-3xl font-bold mb-2">📚 DBMS Checklist</h1>
+        <p className="text-gray-400 mb-6">
+          Track your DBMS preparation
+        </p>
+
+        {/* PROGRESS */}
+        <div className="mb-6">
+          <div className="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <p className="text-sm text-gray-400 mt-2">
+            {done} / {total} completed ({progress}%)
           </p>
-          
-          {/* Features Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 bg-white shadow-md rounded-lg">
-              <h2 className="text-xl font-semibold">Reusable Components</h2>
-              <p className="text-gray-600 mt-2">Pre-built components for efficiency and consistency.</p>
-            </div>
-            <div className="p-6 bg-white shadow-md rounded-lg">
-              <h2 className="text-xl font-semibold">Fully Customizable</h2>
-              <p className="text-gray-600 mt-2">Modify styles and behaviors to fit your needs.</p>
-            </div>
-            <div className="p-6 bg-white shadow-md rounded-lg">
-              <h2 className="text-xl font-semibold">Tailwind Powered</h2>
-              <p className="text-gray-600 mt-2">Built with Tailwind CSS for seamless integration.</p>
-            </div>
-            <div className="p-6 bg-white shadow-md rounded-lg">
-              <h2 className="text-xl font-semibold">Optimized for Performance</h2>
-              <p className="text-gray-600 mt-2">Lightweight, responsive, and easy to use.</p>
-            </div>
-            <div className="p-6 bg-white shadow-md rounded-lg">
-              <h2 className="text-xl font-semibold">Dark Mode Support</h2>
-              <p className="text-gray-600 mt-2">Easily switch between light and dark modes.</p>
-            </div>
-            <div className="p-6 bg-white shadow-md rounded-lg">
-              <h2 className="text-xl font-semibold">Regular Updates</h2>
-              <p className="text-gray-600 mt-2">New components and features added frequently.</p>
-            </div>
-          </div>
-
-          {/* Component Categories Section */}
-          <div className="mt-12">
-            <h2 className="text-3xl font-semibold mb-4">Component Categories</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="p-4 bg-white shadow-md rounded-lg text-center cursor-pointer hover:bg-blue-100">
-                Buttons
-              </div>
-              <div className="p-4 bg-white shadow-md rounded-lg text-center cursor-pointer hover:bg-blue-100">
-                Cards
-              </div>
-              <div className="p-4 bg-white shadow-md rounded-lg text-center cursor-pointer hover:bg-blue-100">
-                Forms
-              </div>
-              <div className="p-4 bg-white shadow-md rounded-lg text-center cursor-pointer hover:bg-blue-100">
-                Modals
-              </div>
-              <div className="p-4 bg-white shadow-md rounded-lg text-center cursor-pointer hover:bg-blue-100">
-                Alerts
-              </div>
-              <div className="p-4 bg-white shadow-md rounded-lg text-center cursor-pointer hover:bg-blue-100">
-                Tables
-              </div>
-              <div className="p-4 bg-white shadow-md rounded-lg text-center cursor-pointer hover:bg-blue-100">
-                Badges
-              </div>
-              <div className="p-4 bg-white shadow-md rounded-lg text-center cursor-pointer hover:bg-blue-100">
-                Navigation
-              </div>
-            </div>
-          </div>
-
-          {/* Live Preview Section */}
-          <div className="mt-12">
-            <h2 className="text-3xl font-semibold mb-4">Live Preview</h2>
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Primary</button>
-              <button className="bg-gray-300 text-gray-800 px-4 py-2 rounded-md">Secondary</button>
-              <button className="border border-gray-500 text-gray-700 px-4 py-2 rounded-md">Outline</button>
-              <button className="bg-green-500 text-white px-4 py-2 rounded-md">Success</button>
-              <button className="bg-red-500 text-white px-4 py-2 rounded-md">Danger</button>
-            </div>
-          </div>
         </div>
+
+        {/* TOPICS */}
+        <div className="space-y-4">
+          {DATA.map((topic, i) => {
+            const topicDone = topic.items.filter((item) => checked[item]).length;
+            const topicTotal = topic.items.length;
+
+            return (
+              <div
+                key={i}
+                className="bg-[#1a1a2e] border border-gray-800 rounded-xl p-4 relative"
+              >
+                {/* LEFT BORDER */}
+                <div className="absolute left-0 top-0 h-full w-1 bg-yellow-400 rounded-l-xl" />
+
+                {/* HEADER */}
+                <div className="flex justify-between items-center mb-3">
+                  <div>
+                    <h3 className="font-semibold text-lg">{topic.title}</h3>
+                    <p className="text-sm text-gray-400">
+                      {topicDone}/{topicTotal} done
+                    </p>
+
+                    {/* MINI PROGRESS */}
+                    <div className="w-full h-1 bg-gray-800 rounded mt-2">
+                      <div
+                        className="h-1 bg-yellow-400 rounded"
+                        style={{
+                          width: `${(topicDone / topicTotal) * 100}%`,
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => markAll(topic.items)}
+                    className="text-sm border border-yellow-400 px-3 py-1 rounded-lg hover:bg-yellow-400 hover:text-black transition"
+                  >
+                    Mark all
+                  </button>
+                </div>
+
+                {/* ITEMS */}
+                <div>
+                  {topic.items.map((item, j) => (
+                    <div
+                      key={j}
+                      className="flex items-center gap-3 py-2 border-b border-gray-800 last:border-none"
+                    >
+                      {/* CUSTOM CHECKBOX */}
+                      <div
+                        onClick={() => toggle(item)}
+                        className={`w-5 h-5 rounded border flex items-center justify-center cursor-pointer
+                          ${
+                            checked[item]
+                              ? "bg-purple-500 border-purple-500"
+                              : "border-gray-500"
+                          }`}
+                      >
+                        {checked[item] && "✓"}
+                      </div>
+
+                      {/* TEXT */}
+                      <span
+                        className={`text-sm ${
+                          checked[item]
+                            ? "line-through text-gray-500"
+                            : "text-gray-300"
+                        }`}
+                      >
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* RESET */}
+        <button
+          onClick={() => setChecked({})}
+          className="mt-6 w-full py-2 bg-red-500 hover:bg-red-600 rounded-lg transition"
+        >
+          Reset Progress
+        </button>
       </div>
     </div>
   );
-};
-
-export default Introduction;
+}
